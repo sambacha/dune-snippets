@@ -1,4 +1,6 @@
-# Dune Snippets
+# Dune Snippets & SQL Snippets for Ethereum
+
+> python notebook for accessing googles Big Query 
 
 > dune snippets for [duneanalytics.com](https://duneanalytics.com)
 
