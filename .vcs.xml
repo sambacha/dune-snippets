@@ -1,0 +1,38 @@
+dune
+├── [ 287]  dune/AverageGweiPricePerHour.sql
+├── [4.8K]  dune/Curve_SUSD_YUSD.sql
+├── [ 151]  dune/DAI_PriceFluc.sql
+├── [1.3K]  dune/GasCosts_for_typical_Actions_RecentGweiPricing.sql
+├── [ 17K]  dune/Idle_AUM.sql
+├── [ 396]  dune/MakerDAO_LiquidationsPerHour.sql
+├── [2.8K]  dune/TotalNumberOfTransactions_SmartWalletsOnly.sql
+├── [4.0K]  dune/TotalStableTokens_StoreInSmartWallets.sql
+├── [2.1K]  dune/YETH_FunctionCounts_Daily.sql
+├── [ 329]  dune/YFI_DailyRewards_Claimed.sql
+├── [ 288]  dune/generic
+│   ├── [ 318]  dune/generic/avg-gas-price-per-hour.sql
+│   ├── [ 322]  dune/generic/avg.sql
+│   ├── [ 476]  dune/generic/contract-delpoyments-per-month.sql
+│   ├── [ 389]  dune/generic/ethereum-gas-usd-per-day.sql
+│   ├── [1.2K]  dune/generic/gas-costs-for-typical-actions.sql
+│   ├── [ 928]  dune/generic/gas-token-mint-gas-price.sql
+│   └── [ 205]  dune/generic/list-of-USDT-Banned-Addresses.sql
+└── [ 576]  dune/sql
+    ├── [3.4K]  dune/sql/RoutedUniswapSwaps.sql
+    ├── [ 273]  dune/sql/block_rewards_daily_by_miner.sql
+    ├── [1.9K]  dune/sql/block_rewards_gini.sql
+    ├── [ 307]  dune/sql/daily_top_miners.sql
+    ├── [2.9K]  dune/sql/gini.sql
+    ├── [2.9K]  dune/sql/gini_daily.sql
+    ├── [3.1K]  dune/sql/gini_sma.sql
+    ├── [ 493]  dune/sql/hashrate.sql
+    ├── [ 726]  dune/sql/hashrate_by_day.sql
+    ├── [ 739]  dune/sql/hashrate_by_hour.sql
+    ├── [ 319]  dune/sql/hashrate_daily_average.sql
+    ├── [ 840]  dune/sql/hashrate_sma.sql
+    ├── [ 323]  dune/sql/miners_by_reward_monthly.sql
+    ├── [2.8K]  dune/sql/onchain_transactions_all.sql
+    ├── [1.4K]  dune/sql/rich_list.sql
+    └── [ 408]  dune/sql/top_miners.sql
+
+2 directories, 33 files

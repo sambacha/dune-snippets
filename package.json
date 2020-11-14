@@ -1,0 +1,22 @@
+{
+  "name": "dune-snippets",
+  "version": "1.0.0",
+  "description": "Dune Analytics Snippets",
+  "main": "index.js",
+  "scripts": {
+    "init-gh-pages": "touch .nojekyll",
+    "generate-docs": "docute"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/dune-snippets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sambacha/dune-snippets/issues"
+  },
+  "homepage": "https://github.com/sambacha/dune-snippets#readme",
+  "dependencies": {}
+}
