@@ -1,38 +1,180 @@
-dune
-├── [ 287]  dune/AverageGweiPricePerHour.sql
-├── [4.8K]  dune/Curve_SUSD_YUSD.sql
-├── [ 151]  dune/DAI_PriceFluc.sql
-├── [1.3K]  dune/GasCosts_for_typical_Actions_RecentGweiPricing.sql
-├── [ 17K]  dune/Idle_AUM.sql
-├── [ 396]  dune/MakerDAO_LiquidationsPerHour.sql
-├── [2.8K]  dune/TotalNumberOfTransactions_SmartWalletsOnly.sql
-├── [4.0K]  dune/TotalStableTokens_StoreInSmartWallets.sql
-├── [2.1K]  dune/YETH_FunctionCounts_Daily.sql
-├── [ 329]  dune/YFI_DailyRewards_Claimed.sql
-├── [ 288]  dune/generic
-│   ├── [ 318]  dune/generic/avg-gas-price-per-hour.sql
-│   ├── [ 322]  dune/generic/avg.sql
-│   ├── [ 476]  dune/generic/contract-delpoyments-per-month.sql
-│   ├── [ 389]  dune/generic/ethereum-gas-usd-per-day.sql
-│   ├── [1.2K]  dune/generic/gas-costs-for-typical-actions.sql
-│   ├── [ 928]  dune/generic/gas-token-mint-gas-price.sql
-│   └── [ 205]  dune/generic/list-of-USDT-Banned-Addresses.sql
-└── [ 576]  dune/sql
-    ├── [3.4K]  dune/sql/RoutedUniswapSwaps.sql
-    ├── [ 273]  dune/sql/block_rewards_daily_by_miner.sql
-    ├── [1.9K]  dune/sql/block_rewards_gini.sql
-    ├── [ 307]  dune/sql/daily_top_miners.sql
-    ├── [2.9K]  dune/sql/gini.sql
-    ├── [2.9K]  dune/sql/gini_daily.sql
-    ├── [3.1K]  dune/sql/gini_sma.sql
-    ├── [ 493]  dune/sql/hashrate.sql
-    ├── [ 726]  dune/sql/hashrate_by_day.sql
-    ├── [ 739]  dune/sql/hashrate_by_hour.sql
-    ├── [ 319]  dune/sql/hashrate_daily_average.sql
-    ├── [ 840]  dune/sql/hashrate_sma.sql
-    ├── [ 323]  dune/sql/miners_by_reward_monthly.sql
-    ├── [2.8K]  dune/sql/onchain_transactions_all.sql
-    ├── [1.4K]  dune/sql/rich_list.sql
-    └── [ 408]  dune/sql/top_miners.sql
-
-2 directories, 33 files
+<?xml version="1.0" encoding="UTF-8"?>
+<tree>
+  <directory name="dune">
+    <file name="dune/AverageGweiPricePerHour.sql" size="287"></file>
+    <file name="dune/Curve_SUSD_YUSD.sql" size="4896"></file>
+    <file name="dune/DAI_PriceFluc.sql" size="151"></file>
+    <file name="dune/GasCosts_for_typical_Actions_RecentGweiPricing.sql" size="1282"></file>
+    <file name="dune/Idle_AUM.sql" size="17038"></file>
+    <file name="dune/MakerDAO_LiquidationsPerHour.sql" size="396"></file>
+    <file name="dune/TotalNumberOfTransactions_SmartWalletsOnly.sql" size="2894"></file>
+    <file name="dune/TotalStableTokens_StoreInSmartWallets.sql" size="4131"></file>
+    <file name="dune/YETH_FunctionCounts_Daily.sql" size="2143"></file>
+    <file name="dune/YFI_DailyRewards_Claimed.sql" size="329"></file>
+    <directory name="dune/abstractions" size="992">
+      <directory name="dune/abstractions/aave" size="96">
+        <file name="dune/abstractions/aave/view_atokens.sql" size="2552"></file>
+      </directory>
+      <directory name="dune/abstractions/balancer" size="160">
+        <file name="dune/abstractions/balancer/view_add_liquidity.sql" size="572"></file>
+        <file name="dune/abstractions/balancer/view_remove_liquidity.sql" size="578"></file>
+        <file name="dune/abstractions/balancer/view_swaps.sql" size="1015"></file>
+      </directory>
+      <directory name="dune/abstractions/bancornetwork" size="416">
+        <file name="dune/abstractions/bancornetwork/view_add_convertible_token.sql" size="920"></file>
+        <file name="dune/abstractions/bancornetwork/view_add_liquidity_pool.sql" size="2130"></file>
+        <file name="dune/abstractions/bancornetwork/view_add_smart_token.sql" size="2097"></file>
+        <file name="dune/abstractions/bancornetwork/view_convert.sql" size="1208"></file>
+        <file name="dune/abstractions/bancornetwork/view_remove_convertible_token.sql" size="933"></file>
+        <file name="dune/abstractions/bancornetwork/view_remove_liquidity_pool.sql" size="2153"></file>
+        <file name="dune/abstractions/bancornetwork/view_remove_smart_token.sql" size="2117"></file>
+        <file name="dune/abstractions/bancornetwork/view_smart_tokens.sql" size="23984"></file>
+        <file name="dune/abstractions/bancornetwork/view_update_conversion_fee.sql" size="1385"></file>
+        <file name="dune/abstractions/bancornetwork/view_update_price_data.sql" size="1424"></file>
+        <file name="dune/abstractions/bancornetwork/view_update_token_rate.sql" size="508"></file>
+      </directory>
+      <file name="dune/abstractions/borrow.sql" size="6203"></file>
+      <file name="dune/abstractions/collateral.sql" size="7047"></file>
+      <directory name="dune/abstractions/compound" size="320">
+        <file name="dune/abstractions/compound/view_accrue_interest.sql" size="1406"></file>
+        <file name="dune/abstractions/compound/view_borrow.sql" size="1125"></file>
+        <file name="dune/abstractions/compound/view_ctokens.sql" size="1651"></file>
+        <file name="dune/abstractions/compound/view_liquidate_borrow.sql" size="4317"></file>
+        <file name="dune/abstractions/compound/view_mint.sql" size="980"></file>
+        <file name="dune/abstractions/compound/view_redeem.sql" size="1002"></file>
+        <file name="dune/abstractions/compound/view_repay_borrow.sql" size="1142"></file>
+        <file name="dune/abstractions/compound/view_transfer_ctoken.sql" size="655"></file>
+      </directory>
+      <directory name="dune/abstractions/curvefi" size="96">
+        <file name="dune/abstractions/curvefi/view_trades.sql" size="24436"></file>
+      </directory>
+      <directory name="dune/abstractions/dex" size="96">
+        <file name="dune/abstractions/dex/trades.sql" size="29532"></file>
+      </directory>
+      <directory name="dune/abstractions/erc20" size="128">
+        <file name="dune/abstractions/erc20/stablecoins.sql" size="829"></file>
+        <file name="dune/abstractions/erc20/tokens.sql" size="32241"></file>
+      </directory>
+      <directory name="dune/abstractions/ethereumnameservice" size="224">
+        <file name="dune/abstractions/ethereumnameservice/old_preimages.sql" size="24612646"></file>
+        <file name="dune/abstractions/ethereumnameservice/view_expirations.sql" size="679"></file>
+        <file name="dune/abstractions/ethereumnameservice/view_registrations.sql" size="319"></file>
+        <file name="dune/abstractions/ethereumnameservice/view_registries.sql" size="381"></file>
+        <file name="dune/abstractions/ethereumnameservice/view_renewals.sql" size="306"></file>
+      </directory>
+      <directory name="dune/abstractions/gnosis_protocol" size="288">
+        <file name="dune/abstractions/gnosis_protocol/known_address.sql" size="19696"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_balances.sql" size="1295"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_movement.sql" size="7719"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_price_batch.sql" size="6893"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_tokens.sql" size="1710"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_trade_stats.sql" size="2838"></file>
+        <file name="dune/abstractions/gnosis_protocol/view_trades.sql" size="3837"></file>
+      </directory>
+      <directory name="dune/abstractions/gnosis_safe" size="96">
+        <file name="dune/abstractions/gnosis_safe/view_safes.sql" size="4837"></file>
+      </directory>
+      <directory name="dune/abstractions/iearn_v1" size="96">
+        <file name="dune/abstractions/iearn_v1/view_ytokens.sql" size="1120"></file>
+      </directory>
+      <directory name="dune/abstractions/iearn_v2" size="96">
+        <file name="dune/abstractions/iearn_v2/view_ytokens.sql" size="928"></file>
+      </directory>
+      <directory name="dune/abstractions/lending" size="160">
+        <file name="dune/abstractions/lending/borrow.sql" size="6203"></file>
+        <file name="dune/abstractions/lending/collateral.sql" size="7047"></file>
+        <file name="dune/abstractions/lending/repay.sql" size="5654"></file>
+      </directory>
+      <directory name="dune/abstractions/loopring" size="128">
+        <file name="dune/abstractions/loopring/fn_decode_float.sql" size="439"></file>
+        <file name="dune/abstractions/loopring/fn_process_trade_block.sql" size="1849"></file>
+      </directory>
+      <directory name="dune/abstractions/makermcd" size="96">
+        <file name="dune/abstractions/makermcd/collateral_addresses.sql" size="2145"></file>
+      </directory>
+      <directory name="dune/abstractions/oneinch" size="96">
+        <file name="dune/abstractions/oneinch/view_swaps.sql" size="9488"></file>
+      </directory>
+      <directory name="dune/abstractions/oneproto" size="96">
+        <file name="dune/abstractions/oneproto/view_swaps.sql" size="6853"></file>
+      </directory>
+      <directory name="dune/abstractions/onesplit" size="96">
+        <file name="dune/abstractions/onesplit/view_swaps.sql" size="7310"></file>
+      </directory>
+      <file name="dune/abstractions/repay.sql" size="5654"></file>
+      <directory name="dune/abstractions/stablecoin" size="96">
+        <file name="dune/abstractions/stablecoin/view_transfers.sql" size="1367"></file>
+      </directory>
+      <directory name="dune/abstractions/synthetix" size="192">
+        <file name="dune/abstractions/synthetix/rates.sql" size="1849"></file>
+        <file name="dune/abstractions/synthetix/symbols.sql" size="11147"></file>
+        <file name="dune/abstractions/synthetix/synths.sql" size="31375"></file>
+        <file name="dune/abstractions/synthetix/trades.sql" size="2882"></file>
+      </directory>
+      <directory name="dune/abstractions/token_balances" size="96">
+        <file name="dune/abstractions/token_balances/project_addresses.sql" size="1931"></file>
+      </directory>
+      <directory name="dune/abstractions/uniswap" size="224">
+        <file name="dune/abstractions/uniswap/view_add_liquidity.sql" size="969"></file>
+        <file name="dune/abstractions/uniswap/view_eth_purchase.sql" size="946"></file>
+        <file name="dune/abstractions/uniswap/view_new_exchange.sql" size="372"></file>
+        <file name="dune/abstractions/uniswap/view_remove_liquidity.sql" size="975"></file>
+        <file name="dune/abstractions/uniswap/view_token_purchase.sql" size="954"></file>
+      </directory>
+      <directory name="dune/abstractions/uniswap_merkle" size="96">
+        <file name="dune/abstractions/uniswap_merkle/mrkl.sql" size="22596101"></file>
+      </directory>
+      <directory name="dune/abstractions/yamfinance" size="96">
+        <file name="dune/abstractions/yamfinance/pools.sql" size="1086"></file>
+      </directory>
+      <directory name="dune/abstractions/yearn" size="96">
+        <file name="dune/abstractions/yearn/view_ytokens.sql" size="661"></file>
+      </directory>
+      <directory name="dune/abstractions/zeroex" size="320">
+        <file name="dune/abstractions/zeroex/view_affiliate_data.sql" size="2698"></file>
+        <file name="dune/abstractions/zeroex/view_current_epoch.sql" size="838"></file>
+        <file name="dune/abstractions/zeroex/view_epochs.sql" size="2613"></file>
+        <file name="dune/abstractions/zeroex/view_fills.sql" size="8487"></file>
+        <file name="dune/abstractions/zeroex/view_rewards_paid.sql" size="331"></file>
+        <file name="dune/abstractions/zeroex/view_staking_parameters.sql" size="498"></file>
+        <file name="dune/abstractions/zeroex/view_staking_pools.sql" size="516"></file>
+        <file name="dune/abstractions/zeroex/view_zrx_staking_changes.sql" size="1081"></file>
+      </directory>
+    </directory>
+    <directory name="dune/generic" size="288">
+      <file name="dune/generic/avg-gas-price-per-hour.sql" size="318"></file>
+      <file name="dune/generic/avg.sql" size="322"></file>
+      <file name="dune/generic/contract-delpoyments-per-month.sql" size="476"></file>
+      <file name="dune/generic/ethereum-gas-usd-per-day.sql" size="389"></file>
+      <file name="dune/generic/gas-costs-for-typical-actions.sql" size="1275"></file>
+      <file name="dune/generic/gas-token-mint-gas-price.sql" size="928"></file>
+      <file name="dune/generic/list-of-USDT-Banned-Addresses.sql" size="205"></file>
+    </directory>
+    <directory name="dune/sql" size="576">
+      <file name="dune/sql/RoutedUniswapSwaps.sql" size="3494"></file>
+      <file name="dune/sql/block_rewards_daily_by_miner.sql" size="273"></file>
+      <file name="dune/sql/block_rewards_gini.sql" size="1931"></file>
+      <file name="dune/sql/daily_top_miners.sql" size="307"></file>
+      <file name="dune/sql/gini.sql" size="3011"></file>
+      <file name="dune/sql/gini_daily.sql" size="3009"></file>
+      <file name="dune/sql/gini_sma.sql" size="3193"></file>
+      <file name="dune/sql/hashrate.sql" size="493"></file>
+      <file name="dune/sql/hashrate_by_day.sql" size="726"></file>
+      <file name="dune/sql/hashrate_by_hour.sql" size="739"></file>
+      <file name="dune/sql/hashrate_daily_average.sql" size="319"></file>
+      <file name="dune/sql/hashrate_sma.sql" size="840"></file>
+      <file name="dune/sql/miners_by_reward_monthly.sql" size="323"></file>
+      <file name="dune/sql/onchain_transactions_all.sql" size="2845"></file>
+      <file name="dune/sql/rich_list.sql" size="1409"></file>
+      <file name="dune/sql/top_miners.sql" size="408"></file>
+    </directory>
+    <file name="dune/yVault_yCrv_Cumlative.sql" size="1322"></file>
+    <file name="dune/yVault_yUSDT_Cumaltive.sql" size="1356"></file>
+    <file name="dune/yVault_yUSD_Cumaltive.sql" size="1340"></file>
+    <file name="dune/yVault_yaLINK_Cumulative.sql" size="1335"></file>
+  </directory>
+  <report>
+    <directories>29</directories>
+    <files>113</files>
+  </report>
+</tree>
