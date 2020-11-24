@@ -5,64 +5,19 @@
 > dune snippets for [duneanalytics.com](https://duneanalytics.com)
 
 
-## Dune Snippets
-
-```bash
-.
-├── [1.0K]  LICENSE
-├── [ 16K]  README.md
-├── [ 448]  dune/
-│   ├── [ 287]  AverageGweiPricePerHour.sql
-│   ├── [4.8K]  Curve_SUSD_YUSD.sql
-│   ├── [ 151]  DAI_PriceFluc.sql
-│   ├── [1.3K]  GasCosts_for_typical_Actions_RecentGweiPricing.sql
-│   ├── [ 17K]  Idle_AUM.sql
-│   ├── [ 396]  MakerDAO_LiquidationsPerHour.sql
-│   ├── [2.8K]  TotalNumberOfTransactions_SmartWalletsOnly.sql
-│   ├── [4.0K]  TotalStableTokens_StoreInSmartWallets.sql
-│   ├── [2.1K]  YETH_FunctionCounts_Daily.sql
-│   ├── [ 329]  YFI_DailyRewards_Claimed.sql
-│   ├── [ 288]  generic/
-│   │   ├── [ 318]  avg-gas-price-per-hour.sql
-│   │   ├── [ 322]  avg.sql
-│   │   ├── [ 476]  contract-delpoyments-per-month.sql
-│   │   ├── [ 389]  ethereum-gas-usd-per-day.sql
-│   │   ├── [1.2K]  gas-costs-for-typical-actions.sql
-│   │   ├── [ 928]  gas-token-mint-gas-price.sql
-│   │   └── [ 205]  list-of-USDT-Banned-Addresses.sql
-│   └── [ 576]  sql/
-│       ├── [3.4K]  RoutedUniswapSwaps.sql
-│       ├── [ 273]  block_rewards_daily_by_miner.sql
-│       ├── [1.9K]  block_rewards_gini.sql
-│       ├── [ 307]  daily_top_miners.sql
-│       ├── [2.9K]  gini.sql
-│       ├── [2.9K]  gini_daily.sql
-│       ├── [3.1K]  gini_sma.sql
-│       ├── [ 493]  hashrate.sql
-│       ├── [ 726]  hashrate_by_day.sql
-│       ├── [ 739]  hashrate_by_hour.sql
-│       ├── [ 319]  hashrate_daily_average.sql
-│       ├── [ 840]  hashrate_sma.sql
-│       ├── [ 323]  miners_by_reward_monthly.sql
-│       ├── [2.8K]  onchain_transactions_all.sql
-│       ├── [1.4K]  rich_list.sql
-│       └── [ 408]  top_miners.sql
-├── [  96]  jupyter/
-│   └── [2.1M]  bigquery.ipynb
-└── [ 479]  package.json
-```
-
-
-## Dune Analytics Documentation 
-
-> source: https://hackmd.io/k71ZUSTxQVKGqOcvR6OXnw
-
-
 
 ![](https://i.imgur.com/RURn3Pa.png)
 
 
-## 📑 Documentation for Dune Analytics  
+## Dune Snippets
+
+
+### Dune Analytics Documentation 
+
+> source: https://hackmd.io/k71ZUSTxQVKGqOcvR6OXnw
+
+
+### 📑 Documentation for Dune Analytics  
 
 Here are some tips and tricks on how to get started with the data and interface.
 
@@ -74,7 +29,7 @@ Can't find what you're looking for? Ask our community in our [Telegram channel](
 
 
 
-## Dune Analytics TLDR
+### Dune Analytics TLDR
 
 #### 1. Query human-readable smart contract data with PostgreSQL 🔍
 ------
@@ -463,3 +418,48 @@ SELECT    price.symbol,
 We have a known issue with *function overloading*. There are a few cases where smart contract developers use function overloading, i.e. specify two functions with the same name but different parameters. In these cases, we will currently only have _one_ of the implementations in our database. We’re working on a fix for this. One known case is the two approve implementations in the SAI contract.
 
 
+
+```bash
+.
+├── [1.0K]  LICENSE
+├── [ 16K]  README.md
+├── [ 448]  dune/
+│   ├── [ 287]  AverageGweiPricePerHour.sql
+│   ├── [4.8K]  Curve_SUSD_YUSD.sql
+│   ├── [ 151]  DAI_PriceFluc.sql
+│   ├── [1.3K]  GasCosts_for_typical_Actions_RecentGweiPricing.sql
+│   ├── [ 17K]  Idle_AUM.sql
+│   ├── [ 396]  MakerDAO_LiquidationsPerHour.sql
+│   ├── [2.8K]  TotalNumberOfTransactions_SmartWalletsOnly.sql
+│   ├── [4.0K]  TotalStableTokens_StoreInSmartWallets.sql
+│   ├── [2.1K]  YETH_FunctionCounts_Daily.sql
+│   ├── [ 329]  YFI_DailyRewards_Claimed.sql
+│   ├── [ 288]  generic/
+│   │   ├── [ 318]  avg-gas-price-per-hour.sql
+│   │   ├── [ 322]  avg.sql
+│   │   ├── [ 476]  contract-delpoyments-per-month.sql
+│   │   ├── [ 389]  ethereum-gas-usd-per-day.sql
+│   │   ├── [1.2K]  gas-costs-for-typical-actions.sql
+│   │   ├── [ 928]  gas-token-mint-gas-price.sql
+│   │   └── [ 205]  list-of-USDT-Banned-Addresses.sql
+│   └── [ 576]  sql/
+│       ├── [3.4K]  RoutedUniswapSwaps.sql
+│       ├── [ 273]  block_rewards_daily_by_miner.sql
+│       ├── [1.9K]  block_rewards_gini.sql
+│       ├── [ 307]  daily_top_miners.sql
+│       ├── [2.9K]  gini.sql
+│       ├── [2.9K]  gini_daily.sql
+│       ├── [3.1K]  gini_sma.sql
+│       ├── [ 493]  hashrate.sql
+│       ├── [ 726]  hashrate_by_day.sql
+│       ├── [ 739]  hashrate_by_hour.sql
+│       ├── [ 319]  hashrate_daily_average.sql
+│       ├── [ 840]  hashrate_sma.sql
+│       ├── [ 323]  miners_by_reward_monthly.sql
+│       ├── [2.8K]  onchain_transactions_all.sql
+│       ├── [1.4K]  rich_list.sql
+│       └── [ 408]  top_miners.sql
+├── [  96]  jupyter/
+│   └── [2.1M]  bigquery.ipynb
+└── [ 479]  package.json
+```
