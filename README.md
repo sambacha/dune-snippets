@@ -1,10 +1,76 @@
 # Dune Snippets 
 
-Snippets of both Dune user submissions and my own
+> Snippets of both Dune user submissions and my own
 
 
-![](https://i.imgur.com/RURn3Pa.png)
+ <img src="https://i.imgur.com/RURn3Pa.png" align="center" width="450">
+ 
+<br />
 
+### Contents
+- [📑 Documentation](#---documentation)
+      - [👇 Top links](#---top-links)
+      - [📚 Need some help getting started with queries?](#---need-some-help-getting-started-with-queries-)
+  * [Dune Analytics TLDR](#dune-analytics-tldr)
+      - [1. Query human-readable smart contract data with PostgreSQL 🔍](#1-query-human-readable-smart-contract-data-with-postgresql---)
+      - [2. Visualize your findings 📊](#2-visualize-your-findings---)
+      - [3. Create dashboards and share them with public links 🌎](#3-create-dashboards-and-share-them-with-public-links---)
+      - [4. Explore analysis created by other community members. You can fork any query by the click of a button. 👨‍👩‍👦‍👦](#4-explore-analysis-created-by-other-community-members-you-can-fork-any-query-by-the-click-of-a-button------------)
+      - [👉  Create a user for free at [duneanalytics.com](https://www.duneanalytics.com/)](#----create-a-user-for-free-at--duneanalyticscom--https---wwwduneanalyticscom--)
+  * [Table of contents](#table-of-contents)
+- [🗂 Data tables](#---data-tables)
+    + [Decoded smart contract data](#decoded-smart-contract-data)
+    + [Abstractions/table views](#abstractions-table-views)
+      - [Raw Ethereum data](#raw-ethereum-data)
+    + [Centralised exchanges trading data](#centralised-exchanges-trading-data)
+- [👨‍🏫 Tips for querying the data](#------tips-for-querying-the-data)
+    + [Use view abstractions and tables](#use-view-abstractions-and-tables)
+    + [Using Inline Ethereum addresses](#using-inline-ethereum-addresses)
+    + [Quote camel case column and table names](#quote-camel-case-column-and-table-names)
+    + [Remove decimals](#remove-decimals)
+    + [Use `date_trunc` to get time](#use--date-trunc--to-get-time)
+    + [How to get USD price](#how-to-get-usd-price)
+    + [Token symbols](#token-symbols)
+- [🏷 Address Labels](#---address-labels)
+    + [🪧 What is a label?](#---what-is-a-label-)
+    + [🖼 What labels looks like](#---what-labels-looks-like)
+      - [Address label examples](#address-label-examples)
+    + [📥 Adding labels](#---adding-labels)
+      - [1. Directly to an address via our [labels page](https://duneanalytics.com/hagaetc/labels)](#1-directly-to-an-address-via-our--labels-page--https---duneanalyticscom-hagaetc-labels-)
+      - [2. Via a Dune query](#2-via-a-dune-query)
+    + [🗄 The labels table](#---the-labels-table)
+    + [🧑‍🔧 Using labels](#------using-labels)
+    + [📜 Usecase: I want to display labels for a list of addresses](#---usecase--i-want-to-display-labels-for-a-list-of-addresses)
+    + [🧼 Usecase: I want to filter my query by labels that exist.](#---usecase--i-want-to-filter-my-query-by-labels-that-exist)
+- [🧐 Understanding data decoding in Dune Analytics](#---understanding-data-decoding-in-dune-analytics)
+  * [What contracts have decoded data?](#what-contracts-have-decoded-data-)
+    + [Decoded data](#decoded-data)
+    + [Abstractions and views](#abstractions-and-views)
+    + [A few handy queries to explore decoded tables](#a-few-handy-queries-to-explore-decoded-tables)
+  * [Scalable decoding across contracts](#scalable-decoding-across-contracts)
+    + [Contracts with the same bytecode](#contracts-with-the-same-bytecode)
+    + [Interfaces](#interfaces)
+  * [How Dune handles Proxy contracts](#how-dune-handles-proxy-contracts)
+- [📬 Get any smart contract decoded](#---get-any-smart-contract-decoded)
+      - [We have decoded data for the most popular smart contract projects. Head to duneanalytics.com/decode if you have a request for decoding of data.](#we-have-decoded-data-for-the-most-popular-smart-contract-projects-head-to-duneanalyticscom-decode-if-you-have-a-request-for-decoding-of-data)
+- [👩‍🏭 Change log](#------change-log)
+      - [[August 2020](https://hackmd.io/YOP3YIgaRAejTPE190sOjw?view) - USD prices for more assets, token decimals on `prices.usd` table](#-august-2020--https---hackmdio-yop3yigaraejtpe190sojw-view----usd-prices-for-more-assets--token-decimals-on--pricesusd--table)
+      - [[March 2020](https://hackmd.io/YOP3YIgaRAejTPE190sOjw?view#March-2020) - block_time denormalization, traces.success and more](#-march-2020--https---hackmdio-yop3yigaraejtpe190sojw-view-march-2020----block-time-denormalization--tracessuccess-and-more)
+      - [[January 2020](https://hackmd.io/YOP3YIgaRAejTPE190sOjw?view) - ERC20 transfer table, Fallback decoding and more](#-january-2020--https---hackmdio-yop3yigaraejtpe190sojw-view----erc20-transfer-table--fallback-decoding-and-more)
+      - [[October 2019](https://hackmd.io/YOP3YIgaRAejTPE190sOjw?view#October-2019) - New data structure](#-october-2019--https---hackmdio-yop3yigaraejtpe190sojw-view-october-2019----new-data-structure)
+- [👉 Some sample queries](#---some-sample-queries)
+  * [Growth rate](#growth-rate)
+  * [Users and amount over a trailing period](#users-and-amount-over-a-trailing-period)
+  * [Filter query by an address in the interface](#filter-query-by-an-address-in-the-interface)
+  * [Circulating supply over time of a token with mint/burn functions](#circulating-supply-over-time-of-a-token-with-mint-burn-functions)
+  * [Circulating supply over time with mint/burn from `0x000...` address](#circulating-supply-over-time-with-mint-burn-from--0x000--address)
+  * [USD value of token utilised for an event](#usd-value-of-token-utilised-for-an-event)
+  * [USD trading volume per token over time](#usd-trading-volume-per-token-over-time)
+  * [USD price for a token from Uniswap](#usd-price-for-a-token-from-uniswap)
+  * [Token (and USD value) per token over time for an address](#token--and-usd-value--per-token-over-time-for-an-address)
+- [🤕 Known issues](#---known-issues)
+    + [Function overloading](#function-overloading)
+    
 
 [source from Dune Analytics HackMD](https://hackmd.io/k71ZUSTxQVKGqOcvR6OXnw)
 
