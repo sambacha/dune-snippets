@@ -1,0 +1,25 @@
+title: Dune Snippets
+lang: en
+description: Dune Analytics Snippets Overview
+
+## local method ##
+# theme: jekyll-rtd-theme
+# debug:
+#   compress: false
+#   dist: true
+#   shortcodes: true
+
+## remote method ##
+remote_theme: rundocs/jekyll-rtd-theme
+
+readme_index:
+  with_frontmatter: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
