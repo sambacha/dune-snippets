@@ -21,6 +21,6 @@ jobs:
                 rm zetasql-formatter_linux_x86_64.zip
 
             - name: SQLAutoFormatter
-              uses: yoheikikuta/sql-autoformat-action@v1
+              uses: yoheikikuta/sql-autoformat-action@v1.0.2
               with:
                 github_token: ${{ secrets.github_token }}
