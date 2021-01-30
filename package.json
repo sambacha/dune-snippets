@@ -11,7 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/sambacha/dune-snippets.git"
   },
-  "keywords": [ "ethereum", "dune analytics", "defi", "sql", "data", "analytics" ],
+  "keywords": [
+    "ethereum",
+    "dune analytics",
+    "defi",
+    "sql",
+    "data",
+    "analytics"
+  ],
   "author": "sam bacha <sam@freighttrust.com>",
   "license": "ISC",
   "bugs": {
