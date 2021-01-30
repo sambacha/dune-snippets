@@ -1,11 +1,9 @@
 {
   "name": "dune-snippets",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Dune Analytics Snippets",
   "main": "index.js",
   "scripts": {
-    "init-gh-pages": "touch .nojekyll",
-    "generate-docs": "docute"
   },
   "repository": {
     "type": "git",
@@ -20,7 +18,7 @@
     "analytics"
   ],
   "author": "sam bacha <sam@freighttrust.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sambacha/dune-snippets/issues"
   },
