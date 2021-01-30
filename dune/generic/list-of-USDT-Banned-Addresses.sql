@@ -1,4 +1,3 @@
-SELECT COUNT(*)
-FROM ethereum."logs" AS logs
-WHERE logs."contract_address" = '\xdac17f958d2ee523a2206206994597c13d831ec7'
-  AND topic1= '\x42e160154868087d6bfdc0ca23d96a1c1cfa32f1b72ba9ba27b69b98a0d819dc'
+version https://git-lfs.github.com/spec/v1
+oid sha256:820846d3c14b3caed9c4de5f902038cbb6cf569a784780c50cad90c32bbbdd6d
+size 205

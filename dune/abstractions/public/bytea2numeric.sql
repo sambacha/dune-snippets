@@ -1,6 +1,3 @@
-DROP FUNCTION bytea2numeric(bytea, boolean, text);
-CREATE FUNCTION bytea2numeric(a bytea, signed boolean = true, byteorder text = 'big')
-    RETURNS numeric
-AS $$
-    return int.from_bytes(a, byteorder=byteorder, signed=signed)
-$$ LANGUAGE plpython3u IMMUTABLE STRICT;
+version https://git-lfs.github.com/spec/v1
+oid sha256:7c25b647f577198d1221841794405046998d52f00268307e18ff9f288b661750
+size 269

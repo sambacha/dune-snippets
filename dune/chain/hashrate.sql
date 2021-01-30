@@ -1,12 +1,3 @@
-WITH block_rows AS (
-  SELECT *, ROW_NUMBER() OVER (ORDER BY timestamp) AS rn
-  FROM `bigquery-public-data.crypto_ethereum_classic.blocks`
-)
-SELECT mp.timestamp AS block_time, 
-TIMESTAMP_DIFF(mp.timestamp, mc.timestamp, SECOND) AS time_elapsed,
-((mp.difficulty + mc.difficulty) / 2) AS average_difficulty,
-((mp.difficulty + mc.difficulty) / 2) / TIMESTAMP_DIFF(mp.timestamp, mc.timestamp, SECOND) AS hashrate
-FROM block_rows mc
-JOIN block_rows mp
-ON  mc.rn = mp.rn - 1
-ORDER BY block_time ASC
+version https://git-lfs.github.com/spec/v1
+oid sha256:5429a759c832c9d5d3977c20065fd33505520733609ee63093fbc42579b5ad08
+size 545

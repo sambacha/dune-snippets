@@ -1,6 +1,3 @@
-SELECT profit/1e18 AS profit,
-       loss/1e18 AS loss,
-       evt_block_time,
-       evt_block_number
-FROM yearn."StrategyHegicETH_evt_Harvested"
-ORDER BY evt_block_time DESC;
+version https://git-lfs.github.com/spec/v1
+oid sha256:19924345845a4da2507d38ca9268041a9c20f6c8fb76258eac1a5ed5ff7048e0
+size 177

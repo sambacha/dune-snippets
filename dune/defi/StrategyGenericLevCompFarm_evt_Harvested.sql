@@ -1,6 +1,3 @@
-SELECT profit/1e18 AS profit,
-       loss/1e18 AS loss,
-       evt_block_time,
-       evt_block_number
-FROM yearn."StrategyGenericLevCompFarm_evt_Harvested"
-ORDER BY evt_block_time DESC;
+version https://git-lfs.github.com/spec/v1
+oid sha256:20727b9de08aca9ee39f54b55f312cbecd08664747ebc6dfe749f2fbc8ebd672
+size 187

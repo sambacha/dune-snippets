@@ -1,8 +1,3 @@
-CREATE OR REPLACE VIEW zeroex.view_rewards_paid AS (
-    SELECT
-        HEX_TO_INT(RIGHT(rp."poolId"::VARCHAR,5)) AS pool_id
-        , epoch - 1 AS epoch_id
-        , rp."membersReward" / 1e18 AS members_reward_eth
-        , rp."operatorReward" / 1e18 AS operator_reward_eth
-    FROM zeroex_v3."StakingProxy_evt_RewardsPaid" rp
-);
+version https://git-lfs.github.com/spec/v1
+oid sha256:eb341515a8e1d296b7a31844c434327d589104896662da6afb40ad1d50ea4b3a
+size 331

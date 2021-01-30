@@ -1,6 +1,3 @@
-SELECT date(block_time_solution) AS day,
-    AVG(token_usd_price)
-FROM gnosis_protocol.view_price_batch
-WHERE token_id=7
-GROUP BY day
-ORDER BY day asc
+version https://git-lfs.github.com/spec/v1
+oid sha256:4f191ec122a3139192472b68862e6a5bfe5c2fe482c1182a6bb8ac3b3a1e6b20
+size 156

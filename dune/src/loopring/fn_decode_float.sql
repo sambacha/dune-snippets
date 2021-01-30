@@ -1,14 +1,3 @@
-DROP FUNCTION loopring.fn_decode_float;
-
-CREATE OR REPLACE FUNCTION loopring.fn_decode_float(data bytea) RETURNS double precision AS $$
-DECLARE
-    exponent integer;
-    mantissa integer;
-    value integer;
-BEGIN
-    value = get_byte(data, 0) * 65536 + get_byte(data, 1) * 256 + get_byte(data, 2);
-    exponent = value / 524288;
-    mantissa = value - (exponent * 524288);
-    return mantissa * POW(10, exponent);
-END; $$
-LANGUAGE PLPGSQL;
+version https://git-lfs.github.com/spec/v1
+oid sha256:05f0fb6b545cb10a38d855b27e69fb481abab3d1029e00377621573d97cf9bfb
+size 439

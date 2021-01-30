@@ -1,14 +1,3 @@
-#standardSQL
--- MIT License
--- Copyright (c) 2019 Yaz Khoury, yaz.khoury@gmail.com
-
-
-WITH mined_block AS (
-  SELECT miner, DATE(timestamp)
-  FROM `bigquery-public-data.crypto_ethereum_classic.blocks` 
-  WHERE DATE(timestamp) > DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH)
-  ORDER BY miner ASC)
-SELECT miner, COUNT(miner) AS total_block_reward 
-FROM mined_block 
-GROUP BY miner 
-ORDER BY total_block_reward ASC
+version https://git-lfs.github.com/spec/v1
+oid sha256:eb763e618f7fb99d06b6d8c5d44f6d72c4b9c88f8b093116aa5b60b69b0481e7
+size 442

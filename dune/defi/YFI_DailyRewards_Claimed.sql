@@ -1,12 +1,3 @@
-(SELECT date_trunc('day', evt_block_time) as time,
-    sum(reward / 1e18) as reward
-    from yearn."YearnGovernance_YFI_evt_RewardPaid"
-    group by time)
-
-UNION
-
-(SELECT date_trunc('day', evt_block_time) as time,
-    sum(reward / 1e18) as reward
-    from yearn."YearnRewards_evt_RewardPaid"
-    group by time)
-order by time asc
+version https://git-lfs.github.com/spec/v1
+oid sha256:75c4d7ff47cf6c4235396a6e646dd140c064089ac5781a0fb052b566e8276ed2
+size 329

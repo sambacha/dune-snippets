@@ -1,27 +1,3 @@
-CREATE OR REPLACE VIEW bancornetwork.view_remove_convertible_token AS
-WITH convertible_tokens AS (
-    SELECT *
-    FROM bancornetwork."BancorConverterRegistry_v3_evt_ConvertibleTokenRemoved"
-    UNION ALL
-    SELECT *
-    FROM bancornetwork."BancorConverterRegistry_v4_evt_ConvertibleTokenRemoved"
-    UNION ALL
-    SELECT *
-    FROM bancornetwork."BancorConverterRegistry_v5_evt_ConvertibleTokenRemoved"
-    UNION ALL
-    SELECT *
-    FROM bancornetwork."BancorConverterRegistry_v6_evt_ConvertibleTokenRemoved"
-    UNION ALL
-    SELECT *
-    FROM bancornetwork."BancorConverterRegistry_v7_evt_ConvertibleTokenRemoved"
-)
-SELECT "_convertibleToken" AS convertible_token,
-       symbol,
-       decimals,
-       "_smartToken" AS smart_token,
-       s.contract_address,
-       evt_tx_hash AS tx_hash,
-       evt_block_time AS block_time
-FROM convertible_tokens s
-LEFT JOIN erc20.tokens t ON s."_convertibleToken" = t.contract_address
-;
+version https://git-lfs.github.com/spec/v1
+oid sha256:493f484f8541643b881c4ee113f561815256a01a8ff3fc3e4347835a3ad395ff
+size 933

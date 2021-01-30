@@ -1,16 +1,3 @@
-/// Contract Deployments Per Month
-SELECT date_trunc('month', block_time),
-count(*),
-SUM(gas_used * (
-            SELECT AVG(p.price)
-            FROM prices."usd" p
-            WHERE p.symbol = 'ETH'
-            AND p.minute = date_trunc('minute', t.block_time)
-            LIMIT 1
-        )*0.000000001)
-FROM ethereum.traces t
-WHERE block_time >= now()::date - interval '1 year'
-AND block_time < date_trunc('month', NOW())
-AND type='create'
-AND tx_success = true
-GROUP BY 1;
+version https://git-lfs.github.com/spec/v1
+oid sha256:1457cecbbf0f10ac6eac291613563feddaab10f70b6e20f12f3e03d6b3e5b211
+size 476

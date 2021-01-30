@@ -1,11 +1,3 @@
-/**
- * Get the average gas limit per block for the last 50 recent blocks
- */
-SELECT block_number,
-       avg(gas_price) / 10^9 AS avg_gas_price,
-       min(gas_price) / 10^9 AS min_gas_price,
-       max(gas_price) / 10^9 AS max_gas_price
-FROM ethereum.transactions
-GROUP BY block_number
-ORDER BY block_number DESC
-LIMIT 50
+version https://git-lfs.github.com/spec/v1
+oid sha256:15a95a0c408d1f14b86a808c8b7541bb3af54a077fbc2b8d0279ed39a055682f
+size 321

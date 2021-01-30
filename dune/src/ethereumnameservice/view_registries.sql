@@ -1,13 +1,3 @@
-CREATE OR REPLACE VIEW ethereumnameservice.view_registries AS
-SELECT 
-  node,
-  label,
-  min(evt_block_time) AS min_evt_block_time, 
-  max(evt_block_time) AS max_evt_block_time, 
-  count(*)  
-  FROM (
-    SELECT * FROM ethereumnameservice."ENSRegistry_evt_NewOwner"
-    UNION
-    SELECT * FROM ethereumnameservice."ENSRegistryWithFallback_evt_NewOwner"
-  ) r
-GROUP BY node, label;
+version https://git-lfs.github.com/spec/v1
+oid sha256:acec3a06f3bffd43c9577338a8c9fa42cbd3c723263157aa87e7c95bdf19603e
+size 381
