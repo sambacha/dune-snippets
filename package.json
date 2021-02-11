@@ -1,10 +1,9 @@
 {
   "name": "dune-snippets",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "Dune Analytics Snippets",
-  "main": "index.js",
-  "scripts": {
-  },
+  "main": "dune/index.json",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sambacha/dune-snippets.git"
@@ -13,6 +12,8 @@
     "ethereum",
     "dune analytics",
     "defi",
+    "big query",
+    "kpi",
     "sql",
     "data",
     "analytics"
