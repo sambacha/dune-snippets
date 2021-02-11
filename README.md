@@ -1,12 +1,19 @@
-# Dune Snippets
+ <img src="https://i.imgur.com/RURn3Pa.png" align="center" width="350">
 
-> Snippets of both Dune user submissions and my own
 
- <img src="https://i.imgur.com/RURn3Pa.png" align="center" width="450">
+## Dune Snippets
+
+<br />
+
+![Autoformat SQL](https://github.com/sambacha/dune-snippets/workflows/Autoformat%20SQL/badge.svg)
+
+
+> Snippets of both Dune user submissions and my own. All queries are linted through a GitHub Actions CI workflow
  
 <br />
+
 [source from Dune Analytics HackMD](https://hackmd.io/k71ZUSTxQVKGqOcvR6OXnw)
-<br />
+
 
 ### Contents
 
