@@ -1,0 +1,34 @@
+Tokens			
+Field name	Type	Mode	Description
+address	STRING	REQUIRED	The address of the ERC20 token
+symbol	STRING	NULLABLE	The symbol of the ERC20 token
+name	STRING	NULLABLE	The name of the ERC20 token
+decimals	STRING	NULLABLE	The number of decimals the token uses. Use safe_cast for casting to NUMERIC or FLOAT64
+total_supply	STRING	NULLABLE	The total token supply. Use safe_cast for casting to NUMERIC or FLOAT64
+block_timestamp	TIMESTAMP	REQUIRED	Timestamp of the block where this token was created
+block_number	INTEGER	REQUIRED	Block number where this token was created
+block_hash	STRING	REQUIRED	Hash of the block where this token was created
+			
+Token Transfers			
+Field name	Type	Mode	Description
+token_address	STRING	REQUIRED	ERC20 token address
+from_address	STRING	NULLABLE	Address of the sender
+to_address	STRING	NULLABLE	Address of the receiver
+value	STRING	NULLABLE	Amount of tokens transferred (ERC20) / id of the token transferred (ERC721). Use safe_cast for casting to NUMERIC or FLOAT64
+transaction_hash	STRING	REQUIRED	Transaction hash
+log_index	INTEGER	REQUIRED	Log index in the transaction receipt
+block_timestamp	TIMESTAMP	REQUIRED	Timestamp of the block where this transfer was in
+block_number	INTEGER	REQUIRED	Block number where this transfer was in
+block_hash	STRING	REQUIRED	Hash of the block where this transfer was in
+			
+Logs			
+Field name	Type	Mode	Description
+log_index	INTEGER	REQUIRED	Integer of the log index position in the block
+transaction_hash	STRING	REQUIRED	Hash of the transactions this log was created from
+transaction_index	INTEGER	REQUIRED	Integer of the transactions index position log was created from
+address	STRING	NULLABLE	Address from which this log originated
+data	STRING	NULLABLE	Contains one or more 32 Bytes non-indexed arguments of the log
+topics	STRING	REPEATED	Indexed log arguments (0 to 4 32-byte hex strings). (In solidity: The first topic is the hash of the signature of the event (e.g. Deposit(address,bytes32,uint256)), except you declared the event with the anonymous specifier.)
+block_timestamp	TIMESTAMP	REQUIRED	Timestamp of the block where this log was in
+block_number	INTEGER	REQUIRED	The block number where this log was in
+block_hash	STRING	REQUIRED	Hash of the block where this log was in

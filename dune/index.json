@@ -332,6 +332,7 @@
           { "type": "file", "name": "yVault_yaLINK_Cumulative.sql" }
         ]
       },
+      { "type": "file", "name": "directory.json" },
       {
         "type": "directory",
         "name": "gas",
@@ -515,6 +516,11 @@
           },
           {
             "type": "directory",
+            "name": "mev",
+            "contents": [{ "type": "file", "name": "zero_gwei.sql" }]
+          },
+          {
+            "type": "directory",
             "name": "oneinch",
             "contents": [{ "type": "file", "name": "view_swaps.sql" }]
           },
@@ -573,7 +579,11 @@
           {
             "type": "directory",
             "name": "yearn",
-            "contents": [{ "type": "file", "name": "view_ytokens.sql" }]
+            "contents": [
+              { "type": "file", "name": "view_ytokens.sql" },
+              { "type": "file", "name": "ycrv_deposit.sql" },
+              { "type": "file", "name": "yvault_ycrv_cul.sql" }
+            ]
           },
           {
             "type": "directory",
@@ -590,8 +600,26 @@
             ]
           }
         ]
+      },
+      {
+        "type": "directory",
+        "name": "sushiswap",
+        "contents": [
+          { "type": "file", "name": "7d_protocol_fees.sql" },
+          { "type": "file", "name": "GMV_sushiswap.sql" },
+          { "type": "file", "name": "LP_timeline_growth.sql" },
+          { "type": "file", "name": "LP_timeline_ratio.sql" },
+          { "type": "file", "name": "compare_sushi_uniswap_pools.sql" },
+          { "type": "file", "name": "culmulative_volume_sushiswap.sql" },
+          { "type": "file", "name": "daily_Unique_Sushi_transactions.sql" },
+          { "type": "file", "name": "daily_unique_claims.sql" },
+          { "type": "file", "name": "deposits_sushipool_counts.sql" },
+          { "type": "file", "name": "top500_Sushi_hodlers.sql" },
+          { "type": "file", "name": "top_masterChef_LPs.sql" },
+          { "type": "file", "name": "unique_7d_traders.sql" }
+        ]
       }
     ]
   },
-  { "type": "report", "directories": 67, "files": 232 }
+  { "type": "report", "directories": 69, "files": 248 }
 ]
