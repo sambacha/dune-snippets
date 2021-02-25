@@ -278,6 +278,11 @@
       },
       {
         "type": "directory",
+        "name": "base",
+        "contents": [{ "type": "file", "name": "_price.sql" }]
+      },
+      {
+        "type": "directory",
         "name": "chain",
         "contents": [
           { "type": "file", "name": "RoutedUniswapSwaps.sql" },
@@ -332,7 +337,6 @@
           { "type": "file", "name": "yVault_yaLINK_Cumulative.sql" }
         ]
       },
-      { "type": "file", "name": "directory.json" },
       {
         "type": "directory",
         "name": "gas",
@@ -345,6 +349,7 @@
           { "type": "file", "name": "MEV_ZeroCostTx.sql" },
           { "type": "file", "name": "MedianGasPrice_24hrs.sql" },
           { "type": "file", "name": "MedianGasPrice_weekly.sql" },
+          { "type": "file", "name": "Proportion_of_AvgUsed.sql" },
           { "type": "file", "name": "TotalDeposits_Coinbase.sql" },
           { "type": "file", "name": "TransactionsPercentTotal_argent.sql" },
           { "type": "file", "name": "YVaultDailyCostUSD_Yearn.sql" },
@@ -365,6 +370,16 @@
         ]
       },
       { "type": "file", "name": "index.json" },
+      {
+        "type": "directory",
+        "name": "makerdao",
+        "contents": [
+          { "type": "file", "name": "Interest_Collateral_Revnue.sql" },
+          { "type": "file", "name": "Interest_Monthly_Rev.sql" },
+          { "type": "file", "name": "PSM_Monthly.sql" },
+          { "type": "file", "name": "PnL.sql" }
+        ]
+      },
       {
         "type": "directory",
         "name": "src",
@@ -621,5 +636,5 @@
       }
     ]
   },
-  { "type": "report", "directories": 69, "files": 248 }
+  { "type": "report", "directories": 71, "files": 253 }
 ]
