@@ -1,0 +1,710 @@
+[
+  {
+    "type": "directory",
+    "name": "dune",
+    "contents": [
+      {
+        "type": "directory",
+        "name": "dune/aave",
+        "contents": [
+          { "type": "file", "name": "dune/aave/Borrow_Amt30.sql" },
+          { "type": "file", "name": "dune/aave/Borrow_Amt7.sql" },
+          { "type": "file", "name": "dune/aave/FlashLoanCumluative.sql" },
+          { "type": "file", "name": "dune/aave/TransactionVolumePerMonth.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/abstractions",
+        "contents": [
+          { "type": "file", "name": "dune/abstractions/README.md" },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/aave",
+            "contents": [{ "type": "file", "name": "dune/abstractions/aave/view_atokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/async_art_v2",
+            "contents": [
+              {
+                "type": "file",
+                "name": "dune/abstractions/async_art_v2/async_art_v2_token_mapping.sql"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/balancer",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/balancer/view_add_liquidity.sql" },
+              { "type": "file", "name": "dune/abstractions/balancer/view_balances.sql" },
+              {
+                "type": "file",
+                "name": "dune/abstractions/balancer/view_pools_tokens_weights.sql"
+              },
+              { "type": "file", "name": "dune/abstractions/balancer/view_remove_liquidity.sql" },
+              { "type": "file", "name": "dune/abstractions/balancer/view_swaps.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/bancornetwork",
+            "contents": [
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_add_convertible_token.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_add_liquidity_pool.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_add_smart_token.sql"
+              },
+              { "type": "file", "name": "dune/abstractions/bancornetwork/view_convert.sql" },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_remove_convertible_token.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_remove_liquidity_pool.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_remove_smart_token.sql"
+              },
+              { "type": "file", "name": "dune/abstractions/bancornetwork/view_smart_tokens.sql" },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_update_conversion_fee.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_update_price_data.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/bancornetwork/view_update_token_rate.sql"
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/chainlink",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/chainlink/view_aggregator_mappings.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/compound",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/compound/view_accrue_interest.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_borrow.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_ctokens.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_liquidate_borrow.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_mint.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_redeem.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_repay_borrow.sql" },
+              { "type": "file", "name": "dune/abstractions/compound/view_transfer_ctoken.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/curvefi",
+            "contents": [{ "type": "file", "name": "dune/abstractions/curvefi/view_trades.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/dex",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/dex/trades.sql" },
+              { "type": "file", "name": "dune/abstractions/dex/view_token_prices.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/erasure_bay",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_burn.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_deposit_reward.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_deposit_stake.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_finalize.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_request_data.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_bay/view_submit_data.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/erasure_numerai",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/erasure_numerai/view_burn.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_numerai/view_reward.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_numerai/view_stake.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/erasure_quant",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/erasure_quant/view_burn.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_quant/view_reward.sql" },
+              { "type": "file", "name": "dune/abstractions/erasure_quant/view_stake.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/erc20",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/erc20/stablecoins.sql" },
+              { "type": "file", "name": "dune/abstractions/erc20/tokens.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/ethereumnameservice",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/ethereumnameservice/old_preimages.sql" },
+              {
+                "type": "file",
+                "name": "dune/abstractions/ethereumnameservice/view_expirations.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/ethereumnameservice/view_registrations.sql"
+              },
+              {
+                "type": "file",
+                "name": "dune/abstractions/ethereumnameservice/view_registries.sql"
+              },
+              { "type": "file", "name": "dune/abstractions/ethereumnameservice/view_renewals.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/gnosis_protocol",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/known_address.sql" },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_balances.sql" },
+              {
+                "type": "file",
+                "name": "dune/abstractions/gnosis_protocol/view_daily_average_prices.sql"
+              },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_movement.sql" },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_price_batch.sql" },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_tokens.sql" },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_trade_stats.sql" },
+              { "type": "file", "name": "dune/abstractions/gnosis_protocol/view_trades.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/gnosis_safe",
+            "contents": [{ "type": "file", "name": "dune/abstractions/gnosis_safe/view_safes.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/iearn_v1",
+            "contents": [{ "type": "file", "name": "dune/abstractions/iearn_v1/view_ytokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/iearn_v2",
+            "contents": [{ "type": "file", "name": "dune/abstractions/iearn_v2/view_ytokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/index",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/index/view_indices.sql" },
+              { "type": "file", "name": "dune/abstractions/index/view_indices_assets.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/lending",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/lending/borrow.sql" },
+              { "type": "file", "name": "dune/abstractions/lending/collateral_change.sql" },
+              { "type": "file", "name": "dune/abstractions/lending/repay.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/loopring",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/loopring/fn_decode_float_16.sql" },
+              { "type": "file", "name": "dune/abstractions/loopring/fn_decode_float_24.sql" },
+              { "type": "file", "name": "dune/abstractions/loopring/fn_process_block_v2.sql" },
+              { "type": "file", "name": "dune/abstractions/loopring/fn_process_trade_block_v1.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/makermcd",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/makermcd/collateral_addresses.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/oneinch",
+            "contents": [{ "type": "file", "name": "dune/abstractions/oneinch/swaps.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/oneproto",
+            "contents": [{ "type": "file", "name": "dune/abstractions/oneproto/swaps.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/onesplit",
+            "contents": [{ "type": "file", "name": "dune/abstractions/onesplit/swaps.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/public",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/public/bytea2numeric.sql" },
+              { "type": "file", "name": "dune/abstractions/public/numeric2bytea.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/stablecoin",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/stablecoin/burn.sql" },
+              { "type": "file", "name": "dune/abstractions/stablecoin/mint.sql" },
+              { "type": "file", "name": "dune/abstractions/stablecoin/transfer.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/synthetix",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/synthetix/rates.sql" },
+              { "type": "file", "name": "dune/abstractions/synthetix/symbols.sql" },
+              { "type": "file", "name": "dune/abstractions/synthetix/synths.sql" },
+              { "type": "file", "name": "dune/abstractions/synthetix/trades.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/token_balances",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/token_balances/project_addresses.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/uniswap_merkle",
+            "contents": [{ "type": "file", "name": "dune/abstractions/uniswap_merkle/mrkl.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/uniswap_v1",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/uniswap_v1/view_add_liquidity.sql" },
+              { "type": "file", "name": "dune/abstractions/uniswap_v1/view_eth_purchase.sql" },
+              { "type": "file", "name": "dune/abstractions/uniswap_v1/view_new_exchange.sql" },
+              { "type": "file", "name": "dune/abstractions/uniswap_v1/view_remove_liquidity.sql" },
+              { "type": "file", "name": "dune/abstractions/uniswap_v1/view_token_purchase.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/unit_protocol",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/unit_protocol/view_tokens.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/yamfinance",
+            "contents": [{ "type": "file", "name": "dune/abstractions/yamfinance/pools.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/yearn",
+            "contents": [{ "type": "file", "name": "dune/abstractions/yearn/view_ytokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/abstractions/zeroex",
+            "contents": [
+              { "type": "file", "name": "dune/abstractions/zeroex/view_0x_api_fills.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_affiliate_data.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_current_epoch.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_epochs.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_fills.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_rewards_paid.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_staking_parameters.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_staking_pools.sql" },
+              { "type": "file", "name": "dune/abstractions/zeroex/view_zrx_staking_changes.sql" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/base",
+        "contents": [{ "type": "file", "name": "dune/base/_price.sql" }]
+      },
+      {
+        "type": "directory",
+        "name": "dune/chain",
+        "contents": [
+          { "type": "file", "name": "dune/chain/RoutedUniswapSwaps.sql" },
+          { "type": "file", "name": "dune/chain/block_rewards_daily_by_miner.sql" },
+          { "type": "file", "name": "dune/chain/block_rewards_gini.sql" },
+          { "type": "file", "name": "dune/chain/daily_top_miners.sql" },
+          { "type": "file", "name": "dune/chain/gini.sql" },
+          { "type": "file", "name": "dune/chain/gini_daily.sql" },
+          { "type": "file", "name": "dune/chain/gini_sma.sql" },
+          { "type": "file", "name": "dune/chain/hashrate.sql" },
+          { "type": "file", "name": "dune/chain/hashrate_by_day.sql" },
+          { "type": "file", "name": "dune/chain/hashrate_by_hour.sql" },
+          { "type": "file", "name": "dune/chain/hashrate_daily_average.sql" },
+          { "type": "file", "name": "dune/chain/hashrate_sma.sql" },
+          { "type": "file", "name": "dune/chain/miners_by_reward_monthly.sql" },
+          { "type": "file", "name": "dune/chain/onchain_transactions_all.sql" },
+          { "type": "file", "name": "dune/chain/rich_list.sql" },
+          { "type": "file", "name": "dune/chain/top_miners.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/defi",
+        "contents": [
+          { "type": "file", "name": "dune/defi/AUM_for_DPI.sql" },
+          { "type": "file", "name": "dune/defi/AverageGweiPricePerHour.sql" },
+          { "type": "file", "name": "dune/defi/Curve_SUSD_YUSD.sql" },
+          { "type": "file", "name": "dune/defi/DAI_PriceFluc.sql" },
+          {
+            "type": "file",
+            "name": "dune/defi/GasCosts_for_typical_Actions_RecentGweiPricing.sql"
+          },
+          { "type": "file", "name": "dune/defi/Idle_AUM.sql" },
+          { "type": "file", "name": "dune/defi/MakerDAO_LiquidationsPerHour.sql" },
+          { "type": "file", "name": "dune/defi/StrategyGenericLevCompFarm_evt_Harvested.sql" },
+          { "type": "file", "name": "dune/defi/StrategyHegicETH_evt_Harvested.sql" },
+          { "type": "file", "name": "dune/defi/TotalNumberOfTransactions_SmartWalletsOnly.sql" },
+          { "type": "file", "name": "dune/defi/TotalStableTokens_StoreInSmartWallets.sql" },
+          { "type": "file", "name": "dune/defi/YETH_FunctionCounts_Daily.sql" },
+          { "type": "file", "name": "dune/defi/YFI_DailyRewards_Claimed.sql" },
+          { "type": "file", "name": "dune/defi/yVault_yCrv_Cumlative.sql" },
+          { "type": "file", "name": "dune/defi/yVault_yUSDT_Cumaltive.sql" },
+          { "type": "file", "name": "dune/defi/yVault_yUSD_Cumaltive.sql" },
+          { "type": "file", "name": "dune/defi/yVault_yaLINK_Cumulative.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/gas",
+        "contents": [
+          { "type": "file", "name": "dune/gas/25PercentMedianGasPrice_hourly.sql" },
+          { "type": "file", "name": "dune/gas/BackRunningBots_DailyGasUsage.sql" },
+          { "type": "file", "name": "dune/gas/BlocksFilledAvgPerHr.sql" },
+          { "type": "file", "name": "dune/gas/CumulativeGasPrices_5mins.sql" },
+          { "type": "file", "name": "dune/gas/GasCostEstimate_TypicalTransaction.sql" },
+          { "type": "file", "name": "dune/gas/GasPriceRanges_hourly.sql" },
+          { "type": "file", "name": "dune/gas/MEV_ZeroCostTx.sql" },
+          { "type": "file", "name": "dune/gas/MedianGasPrice_24hrs.sql" },
+          { "type": "file", "name": "dune/gas/MedianGasPrice_weekly.sql" },
+          { "type": "file", "name": "dune/gas/Proportion_of_AvgUsed.sql" },
+          { "type": "file", "name": "dune/gas/TotalDeposits_Coinbase.sql" },
+          { "type": "file", "name": "dune/gas/TransactionsPercentTotal_argent.sql" },
+          { "type": "file", "name": "dune/gas/YVaultDailyCostUSD_Yearn.sql" },
+          { "type": "file", "name": "dune/gas/YVaultHourlyCostUSD_Yearn.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/generic",
+        "contents": [
+          { "type": "file", "name": "dune/generic/avg-gas-price-per-hour.sql" },
+          { "type": "file", "name": "dune/generic/avg.sql" },
+          { "type": "file", "name": "dune/generic/contract-delpoyments-per-month.sql" },
+          { "type": "file", "name": "dune/generic/ethereum-gas-usd-per-day.sql" },
+          { "type": "file", "name": "dune/generic/gas-costs-for-typical-actions.sql" },
+          { "type": "file", "name": "dune/generic/gas-token-mint-gas-price.sql" },
+          { "type": "file", "name": "dune/generic/list-of-USDT-Banned-Addresses.sql" }
+        ]
+      },
+      { "type": "file", "name": "dune/index.json" },
+      {
+        "type": "directory",
+        "name": "dune/makerdao",
+        "contents": [
+          { "type": "file", "name": "dune/makerdao/Interest_Collateral_Revnue.sql" },
+          { "type": "file", "name": "dune/makerdao/Interest_Monthly_Rev.sql" },
+          { "type": "file", "name": "dune/makerdao/PSM_Monthly.sql" },
+          { "type": "file", "name": "dune/makerdao/PnL.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/src",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "dune/src/NFT",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "dune/src/NFT/erc721",
+                "contents": [
+                  { "type": "file", "name": "dune/src/NFT/erc721/top_tokens_by_transfer.sql" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/aave",
+            "contents": [{ "type": "file", "name": "dune/src/aave/view_atokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/balancer",
+            "contents": [
+              { "type": "file", "name": "dune/src/balancer/view_add_liquidity.sql" },
+              { "type": "file", "name": "dune/src/balancer/view_remove_liquidity.sql" },
+              { "type": "file", "name": "dune/src/balancer/view_swaps.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/bancornetwork",
+            "contents": [
+              { "type": "file", "name": "dune/src/bancornetwork/view_add_convertible_token.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_add_liquidity_pool.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_add_smart_token.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_convert.sql" },
+              {
+                "type": "file",
+                "name": "dune/src/bancornetwork/view_remove_convertible_token.sql"
+              },
+              { "type": "file", "name": "dune/src/bancornetwork/view_remove_liquidity_pool.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_remove_smart_token.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_smart_tokens.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_update_conversion_fee.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_update_price_data.sql" },
+              { "type": "file", "name": "dune/src/bancornetwork/view_update_token_rate.sql" }
+            ]
+          },
+          { "type": "file", "name": "dune/src/borrow.sql" },
+          { "type": "file", "name": "dune/src/collateral.sql" },
+          {
+            "type": "directory",
+            "name": "dune/src/compound",
+            "contents": [
+              { "type": "file", "name": "dune/src/compound/view_accrue_interest.sql" },
+              { "type": "file", "name": "dune/src/compound/view_borrow.sql" },
+              { "type": "file", "name": "dune/src/compound/view_ctokens.sql" },
+              { "type": "file", "name": "dune/src/compound/view_liquidate_borrow.sql" },
+              { "type": "file", "name": "dune/src/compound/view_mint.sql" },
+              { "type": "file", "name": "dune/src/compound/view_redeem.sql" },
+              { "type": "file", "name": "dune/src/compound/view_repay_borrow.sql" },
+              { "type": "file", "name": "dune/src/compound/view_transfer_ctoken.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/curvefi",
+            "contents": [
+              { "type": "file", "name": "dune/src/curvefi/all_Liqudity.sql" },
+              { "type": "file", "name": "dune/src/curvefi/dai_liquidity_daily.sql" },
+              { "type": "file", "name": "dune/src/curvefi/usdc_volume_daily.sql" },
+              { "type": "file", "name": "dune/src/curvefi/view_trades.sql" },
+              { "type": "file", "name": "dune/src/curvefi/wbtc_liquidity_daily.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/dex",
+            "contents": [{ "type": "file", "name": "dune/src/dex/trades.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/erc20",
+            "contents": [
+              { "type": "file", "name": "dune/src/erc20/stablecoins.sql" },
+              { "type": "file", "name": "dune/src/erc20/tokens.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/ethereumnameservice",
+            "contents": [
+              { "type": "file", "name": "dune/src/ethereumnameservice/old_preimages.sql" },
+              { "type": "file", "name": "dune/src/ethereumnameservice/view_expirations.sql" },
+              { "type": "file", "name": "dune/src/ethereumnameservice/view_registrations.sql" },
+              { "type": "file", "name": "dune/src/ethereumnameservice/view_registries.sql" },
+              { "type": "file", "name": "dune/src/ethereumnameservice/view_renewals.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/gnosis_protocol",
+            "contents": [
+              { "type": "file", "name": "dune/src/gnosis_protocol/known_address.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_balances.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_movement.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_price_batch.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_tokens.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_trade_stats.sql" },
+              { "type": "file", "name": "dune/src/gnosis_protocol/view_trades.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/gnosis_safe",
+            "contents": [{ "type": "file", "name": "dune/src/gnosis_safe/view_safes.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/iearn_v1",
+            "contents": [{ "type": "file", "name": "dune/src/iearn_v1/view_ytokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/iearn_v2",
+            "contents": [{ "type": "file", "name": "dune/src/iearn_v2/view_ytokens.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/lending",
+            "contents": [
+              { "type": "file", "name": "dune/src/lending/borrow.sql" },
+              { "type": "file", "name": "dune/src/lending/collateral.sql" },
+              { "type": "file", "name": "dune/src/lending/repay.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/loopring",
+            "contents": [
+              { "type": "file", "name": "dune/src/loopring/fn_decode_float.sql" },
+              { "type": "file", "name": "dune/src/loopring/fn_process_trade_block.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/makermcd",
+            "contents": [{ "type": "file", "name": "dune/src/makermcd/collateral_addresses.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/mev",
+            "contents": [{ "type": "file", "name": "dune/src/mev/zero_gwei.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/oneinch",
+            "contents": [{ "type": "file", "name": "dune/src/oneinch/view_swaps.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/oneproto",
+            "contents": [{ "type": "file", "name": "dune/src/oneproto/view_swaps.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/onesplit",
+            "contents": [{ "type": "file", "name": "dune/src/onesplit/view_swaps.sql" }]
+          },
+          { "type": "file", "name": "dune/src/repay.sql" },
+          {
+            "type": "directory",
+            "name": "dune/src/stablecoin",
+            "contents": [{ "type": "file", "name": "dune/src/stablecoin/view_transfers.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/synthetix",
+            "contents": [
+              { "type": "file", "name": "dune/src/synthetix/rates.sql" },
+              { "type": "file", "name": "dune/src/synthetix/symbols.sql" },
+              { "type": "file", "name": "dune/src/synthetix/synths.sql" },
+              { "type": "file", "name": "dune/src/synthetix/trades.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/token_balances",
+            "contents": [
+              { "type": "file", "name": "dune/src/token_balances/project_addresses.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/uniswap",
+            "contents": [
+              { "type": "file", "name": "dune/src/uniswap/view_add_liquidity.sql" },
+              { "type": "file", "name": "dune/src/uniswap/view_eth_purchase.sql" },
+              { "type": "file", "name": "dune/src/uniswap/view_new_exchange.sql" },
+              { "type": "file", "name": "dune/src/uniswap/view_remove_liquidity.sql" },
+              { "type": "file", "name": "dune/src/uniswap/view_token_purchase.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/uniswap_merkle",
+            "contents": [{ "type": "file", "name": "dune/src/uniswap_merkle/mrkl.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/yamfinance",
+            "contents": [{ "type": "file", "name": "dune/src/yamfinance/pools.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/yearn",
+            "contents": [
+              { "type": "file", "name": "dune/src/yearn/view_ytokens.sql" },
+              { "type": "file", "name": "dune/src/yearn/ycrv_deposit.sql" },
+              { "type": "file", "name": "dune/src/yearn/yvault_ycrv_cul.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/src/zeroex",
+            "contents": [
+              { "type": "file", "name": "dune/src/zeroex/view_affiliate_data.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_current_epoch.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_epochs.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_fills.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_rewards_paid.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_staking_parameters.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_staking_pools.sql" },
+              { "type": "file", "name": "dune/src/zeroex/view_zrx_staking_changes.sql" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/sushiswap",
+        "contents": [
+          { "type": "file", "name": "dune/sushiswap/7d_protocol_fees.sql" },
+          { "type": "file", "name": "dune/sushiswap/GMV_sushiswap.sql" },
+          { "type": "file", "name": "dune/sushiswap/LP_timeline_growth.sql" },
+          { "type": "file", "name": "dune/sushiswap/LP_timeline_ratio.sql" },
+          { "type": "file", "name": "dune/sushiswap/compare_sushi_uniswap_pools.sql" },
+          { "type": "file", "name": "dune/sushiswap/culmulative_volume_sushiswap.sql" },
+          { "type": "file", "name": "dune/sushiswap/daily_Unique_Sushi_transactions.sql" },
+          { "type": "file", "name": "dune/sushiswap/daily_unique_claims.sql" },
+          { "type": "file", "name": "dune/sushiswap/deposits_sushipool_counts.sql" },
+          { "type": "file", "name": "dune/sushiswap/top500_Sushi_hodlers.sql" },
+          { "type": "file", "name": "dune/sushiswap/top_masterChef_LPs.sql" },
+          { "type": "file", "name": "dune/sushiswap/unique_7d_traders.sql" }
+        ]
+      }
+    ]
+  },
+  { "type": "report", "directories": 73, "files": 262 }
+]
