@@ -1,2 +1,12 @@
 .DS_Store
 node_modules
+package-lock.json
+*.tgz
+*.zip
+*.tar.gz
+*.tar
+*.log
+
+.vscode/*
+!.vscode/settings.json.default
+tmp/

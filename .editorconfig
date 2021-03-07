@@ -1,0 +1,38 @@
+
+# EditorConfig  http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Solidity Contracts
+[*.{sol,solidity}]
+indent_size = 4
+
+# JavaScript, JSON, JSX, JavaScript Modules, TypeScript
+[*.{cjs,js,json,jsx,mjs,ts,tsx}]
+indent_size = 2
+indent_style = space
+
+# Shell
+[*.{bash,sh,zsh}]
+indent_size = 2
+indent_style = space
+
+# TOML
+[*.toml]
+indent_size = 2
+indent_style = space
+
+# YAML
+[*.{yaml,yml}]
+indent_size = 2
+indent_style = space

@@ -3,7 +3,11 @@
   "version": "1.5.0",
   "description": "Dune Analytics Snippets",
   "main": "dune/index.json",
-  "scripts": {},
+  "scripts": {
+    "build:index": "rm dune/index.json &&  tree -Jf dune/ > dune/index.json",
+    "release": "npx semantic-release",
+    "format": "npx prettier --config .prettierrc.js --write ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sambacha/dune-snippets.git"
@@ -24,5 +28,8 @@
     "url": "https://github.com/sambacha/dune-snippets/issues"
   },
   "homepage": "https://github.com/sambacha/dune-snippets#readme",
-  "dependencies": {}
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "semantic-release": "^17.4.1"
+  }
 }
