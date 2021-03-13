@@ -1,6 +1,6 @@
 {
   "name": "dune-snippets",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Dune Analytics Snippets",
   "main": "dune/index.json",
   "scripts": {
