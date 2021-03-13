@@ -17,7 +17,6 @@ CREATE TABLE dex.trades (
     exchange_contract_address bytea NOT NULL,
     tx_hash bytea NOT NULL,
     tx_from bytea NOT NULL,
-    tx_to bytea,
     trace_address integer[],
     evt_index integer,
     trade_id integer
@@ -47,7 +46,6 @@ WITH rows AS (
         exchange_contract_address,
         tx_hash,
         tx_from,
-        tx_to,
         trace_address,
         evt_index,
         trade_id
@@ -75,7 +73,6 @@ WITH rows AS (
         exchange_contract_address,
         tx_hash,
         tx."from" as tx_from,
-        tx."to" as tx_to,
         trace_address,
         evt_index,
         row_number() OVER (PARTITION BY tx_hash, evt_index, trace_address) AS trade_id
@@ -178,7 +175,6 @@ WITH rows AS (
 
         -- Kyber: trade from ETH - Token
         SELECT
-
             evt_block_time AS block_time,
             'Kyber' AS project,
             '1' AS version,
@@ -331,7 +327,7 @@ WITH rows AS (
         -- 0x v2.1
         SELECT
             evt_block_time AS block_time,
-            '0x Native' AS project,
+            '0x' AS project,
             '2.1' AS version,
             'DEX' AS category,
             "takerAddress" AS trader_a,
@@ -349,75 +345,12 @@ WITH rows AS (
 
         UNION ALL
 
-        -- 0x v3
-        SELECT
-            evt_block_time AS block_time,
-            '0x Native' AS project,
-            '3' AS version,
-            'DEX' AS category,
-            "takerAddress" AS trader_a,
-            "makerAddress" AS trader_b,
-            "takerAssetFilledAmount" AS token_a_amount_raw,
-            "makerAssetFilledAmount" AS token_b_amount_raw,
-            NULL::numeric AS usd_amount,
-            substring("takerAssetData" for 20 from 17) AS token_a_address,
-            substring("makerAssetData" for 20 from 17) AS token_b_address,
-            contract_address AS exchange_contract_address,
-            evt_tx_hash AS tx_hash,
-            NULL::integer[] AS trace_address,
-            evt_index
-        FROM zeroex_v3."Exchange_evt_Fill"
-
-        UNION ALL
-
-        -- 0x v4 limit orders
-        SELECT
-            evt_block_time AS block_time,
-            '0x Native' AS project,
-            '4' AS version,
-            'DEX' AS category,
-            taker AS trader_a,
-            maker AS trader_b,
-            "takerTokenFilledAmount" AS token_a_amount_raw,
-            "makerTokenFilledAmount" AS token_b_amount_raw,
-            NULL::numeric AS usd_amount,
-            "takerToken" AS token_a_address,
-            "makerToken" AS token_b_address,
-            contract_address AS exchange_contract_address,
-            evt_tx_hash AS tx_hash,
-            NULL::integer[] AS trace_address,
-            evt_index
-        FROM zeroex."ExchangeProxy_evt_LimitOrderFilled"
-
-        UNION ALL
-
-        -- 0x v4 rfq orders
-        SELECT
-            evt_block_time AS block_time,
-            '0x Native' AS project,
-            '4' AS version,
-            'DEX' AS category,
-            taker AS trader_a,
-            maker AS trader_b,
-            "takerTokenFilledAmount" AS token_a_amount_raw,
-            "makerTokenFilledAmount" AS token_b_amount_raw,
-            NULL::numeric AS usd_amount,
-            "takerToken" AS token_a_address,
-            "makerToken" AS token_b_address,
-            contract_address AS exchange_contract_address,
-            evt_tx_hash AS tx_hash,
-            NULL::integer[] AS trace_address,
-            evt_index
-        FROM zeroex."ExchangeProxy_evt_RfqOrderFilled"
-
-        UNION ALL
-
-        -- 0x api
+        -- 0x v3 (0x api volume)
         SELECT
             block_time,
-            '0x API' AS project,
-            NULL AS version,
-            'Aggregator' AS category,
+            '0x' AS project,
+            '3' AS version,
+            'DEX' AS category,
             "taker" AS trader_a,
             "maker" AS trader_b,
             "taker_token_amount_raw" AS token_a_amount_raw,
@@ -432,7 +365,7 @@ WITH rows AS (
         FROM zeroex."view_0x_api_fills"
         where swap_flag is TRUE
 
-        UNION ALL
+        UNION
 
         -- Matcha
         SELECT
@@ -653,23 +586,23 @@ WITH rows AS (
 
         -- 1inch Limit Orders (0x)
         SELECT
-            evt_block_time as block_time,
+            block_time,
             '1inch' AS project,
             '1' AS version,
             'Aggregator' AS category,
-            "takerAddress" AS trader_a,
-            "makerAddress" AS trader_b,
-            "takerAssetFilledAmount" AS token_a_amount_raw,
-            "makerAssetFilledAmount" AS token_b_amount_raw,
+            "taker" AS trader_a,
+            "maker" AS trader_b,
+            "taker_token_amount_raw" AS token_a_amount_raw,
+            "maker_token_amount_raw" AS token_b_amount_raw,
             NULL::numeric AS usd_amount,
-            substring("takerAssetData" for 20 from 17) AS token_a_address,
-            substring("makerAssetData" for 20 from 17) AS token_b_address,
+            taker_token AS token_a_address,
+            maker_token AS token_b_address,
             contract_address AS exchange_contract_address,
-            evt_tx_hash,
+            tx_hash,
             NULL::integer[] AS trace_address,
             evt_index
-        FROM zeroex_v2."Exchange2.1_evt_Fill"
-        WHERE "feeRecipientAddress" = '\x55662e225a3376759c24331a9aed764f8f0c9fbb'
+        FROM zeroex."view_0x_api_fills"
+        WHERE affiliate_address ='\x55662e225a3376759c24331a9aed764f8f0c9fbb'
 
         UNION ALL
 
@@ -712,13 +645,42 @@ WITH rows AS (
             result AS token_a_amount_raw,
             amount AS token_b_amount_raw,
             NULL::numeric AS usd_amount,
-            dst AS token_a_address,
-            src AS token_b_address,
+            CASE WHEN dst = '\xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' OR dst = '\x0000000000000000000000000000000000000000' THEN 
+                '\xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'::bytea ELSE dst
+            END AS token_a_address,
+            CASE WHEN src = '\xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' OR src = '\x0000000000000000000000000000000000000000' THEN 
+                '\xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'::bytea ELSE src
+            END AS token_b_address,
             contract_address AS exchange_contract_address,
             evt_tx_hash AS tx_hash,
             NULL::integer[] AS trace_address,
             evt_index
         FROM mooniswap."MooniSwap_evt_Swapped"
+
+        UNION ALL
+
+        -- 1inch LP
+        SELECT
+            evt_block_time,
+            '1inch LP' AS project,
+            '1' AS version,
+            'DEX' AS category,
+            sender AS trader_a,
+            NULL::bytea AS trader_b,
+            result AS token_a_amount_raw,
+            amount AS token_b_amount_raw,
+            NULL::numeric AS usd_amount,
+            CASE WHEN "dstToken" = '\xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' OR "dstToken" = '\x0000000000000000000000000000000000000000' THEN 
+                '\xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'::bytea ELSE "dstToken"
+            END AS token_a_address,
+            CASE WHEN "srcToken" = '\xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE' OR "srcToken" = '\x0000000000000000000000000000000000000000' THEN 
+                '\xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2'::bytea ELSE "srcToken"
+            END AS token_b_address,
+            contract_address AS exchange_contract_address,
+            evt_tx_hash AS tx_hash,
+            NULL::integer[] AS trace_address,
+            evt_index
+        FROM onelp."Mooniswap_evt_Swapped"
 
         UNION ALL
 
@@ -908,7 +870,7 @@ WITH rows AS (
     WHERE dexs.block_time >= start_ts
     AND dexs.block_time < end_ts
 
-    UNION ALL
+    UNION
 
     -- synthetix has their own usd-prices
     SELECT
@@ -930,7 +892,6 @@ WITH rows AS (
         exchange_contract_address,
         tx_hash,
         tx."from" as tx_from,
-        tx."to" as tx_to,
         NULL AS trace_address,
         evt_index,
         trade_id
@@ -958,7 +919,6 @@ $function$;
 CREATE UNIQUE INDEX IF NOT EXISTS dex_trades_tr_addr_uniq_idx ON dex.trades (tx_hash, trace_address, trade_id);
 CREATE UNIQUE INDEX IF NOT EXISTS dex_trades_evt_index_uniq_idx ON dex.trades (tx_hash, evt_index, trade_id);
 CREATE INDEX IF NOT EXISTS dex_trades_tx_from_idx ON dex.trades (tx_from);
-CREATE INDEX IF NOT EXISTS dex_trades_tx_to_idx ON dex.trades (tx_to);
 CREATE INDEX IF NOT EXISTS dex_trades_project_idx ON dex.trades (project);
 CREATE INDEX IF NOT EXISTS dex_trades_block_time_idx ON dex.trades USING BRIN (block_time);
 CREATE INDEX IF NOT EXISTS dex_trades_token_a_idx ON dex.trades (token_a_address);
