@@ -1,0 +1,139 @@
+# Clang-Format Configuration
+---
+BasedOnStyle: LLVM
+
+# Indent
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 2
+IndentPPDirectives: AfterHash
+
+# Alignment
+AlignAfterOpenBracket: AlwaysBreak
+AlignEscapedNewlines: Left
+AlignOperands: DontAlign
+PointerAlignment: Left
+
+# Breaks
+AllowAllArgumentsOnNextLine: true
+AllowAllConstructorInitializersOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: Never
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: MultiLine
+  AfterFunction: true
+  AfterStruct: true
+  AfterUnion: true
+  BeforeCatch: true
+  BeforeElse: false
+  BeforeLambdaBody: false
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+BreakBeforeBraces: Custom
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 2
+
+# Spaces
+Cpp11BracedListStyle: false
+SpacesInContainerLiterals: false
+
+# Columns
+ColumnLimit: 100
+PenaltyBreakAssignment: 100
+PenaltyBreakBeforeFirstCallParameter: 10
+PenaltyBreakComment: 100
+PenaltyBreakFirstLessLess: 100
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 10
+PenaltyReturnTypeOnItsOwnLine: 10000
+
+# Comments
+ReflowComments: false
+SpacesBeforeTrailingComments: 2
+CommentPragmas: '^ (NOTE|TODO):'
+
+# Sorting
+SortUsingDeclarations: false
+
+# Line Endings
+DeriveLineEnding: false
+UseCRLF: false
+---
+Language: Cpp
+Standard: c++20
+
+# Includes
+SortIncludes: true
+IncludeBlocks: Preserve
+IncludeCategories:
+    # Relative Paths
+  - Regex: '^"'
+    Priority: 1
+
+    # Windows Core Headers
+  - Regex: '^<(ntifs|windows)\.h>'
+    Priority: 2
+
+    # Windows Driver Headers
+  - Regex: '^<(ntddk|wdm)\.h>'
+    Priority: 3
+
+    # Windows Headers
+  - Regex: '^<(wdf|shellapi|winsock2|ws2tcpip|mswsock)\.h>'
+    Priority: 4
+
+    # GTest Headers
+  - Regex: '^<(gtest|gmock)/'
+    Priority: 5
+    SortPriority: 0
+
+    # Library Headers
+  - Regex: '^<.*\.'
+    Priority: 6
+
+    # C Compatibility Headers
+  - Regex: '^<c(a|c|e|f|i|l|m|s|t|u|w)'
+    Priority: 8
+
+    # C++ Standard Library Headers
+  - Regex: '^<'
+    Priority: 7
+
+# Sources: a.hpp is main include for a.cpp, a_test.cpp, etc.
+IncludeIsMainRegex: '(_test|_win32|_posix)?$'
+
+# Headers: a.hpp, a_base.hpp, etc. are main includes for a.cpp
+IncludeIsMainSourceRegex: '(_base|_impl)?$'
+
+# Macros
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+
+MacroBlockBegin: '^BEGIN_(MSG_MAP|MSG_MAP_EX|UPDATE_UI_MAP)'
+MacroBlockEnd: '^END_(MSG_MAP|UPDATE_UI_MAP)'
+
+StatementMacros:
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+---
+Language: ObjC
+DisableFormat: true
+---
+Language: Java
+BreakAfterJavaFieldAnnotations: true
+---
+Language: JavaScript
+JavaScriptQuotes: Double
+JavaScriptWrapImports: true
+...

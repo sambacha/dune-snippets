@@ -2,3 +2,7 @@
 jupyter/
 examples/
 schemas/
+prepublish.sh
+.github/
+renovate.json
+coverage/

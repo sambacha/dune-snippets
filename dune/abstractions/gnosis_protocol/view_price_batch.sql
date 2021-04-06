@@ -182,13 +182,17 @@ FROM prices_in_usd
 LEFT OUTER JOIN best_owl_price ON best_owl_price.batch_id = prices_in_usd.batch_id
   AND best_owl_price.evt_index = prices_in_usd.evt_index;
 
+CREATE UNIQUE INDEX IF NOT EXISTS view_price_batch_id ON
+    gnosis_protocol.view_price_batch (batch_id, token_id);
+CREATE INDEX view_price_batch_idx_1 ON
+    gnosis_protocol.view_price_batch (token_id);
+CREATE
+    INDEX view_price_batch_idx_2 ON gnosis_protocol.view_price_batch (symbol);
+CREATE INDEX view_price_batch_idx_3 ON
+    gnosis_protocol.view_price_batch (price_date);
 
-CREATE UNIQUE INDEX IF NOT EXISTS view_price_batch_id ON gnosis_protocol.view_price_batch (batch_id, token_id);
-CREATE INDEX view_price_batch_idx_1 ON gnosis_protocol.view_price_batch (token_id);
-CREATE INDEX view_price_batch_idx_2 ON gnosis_protocol.view_price_batch (symbol);
-CREATE INDEX view_price_batch_idx_3 ON gnosis_protocol.view_price_batch (price_date);
-
-INSERT INTO cron.job (schedule, command)
-VALUES ('*/5 * * * *', 'REFRESH MATERIALIZED VIEW CONCURRENTLY gnosis_protocol.view_price_batch')
-ON CONFLICT (command) DO UPDATE SET schedule=EXCLUDED.schedule;
+INSERT INTO cron.job (schedule, command) VALUES (
+    '*/5 * * * *',
+    'REFRESH MATERIALIZED VIEW CONCURRENTLY gnosis_protocol.view_price_batch')
+    ON CONFLICT (command) DO UPDATE SET schedule = EXCLUDED.schedule;
 COMMIT;

@@ -39,6 +39,8 @@
             "contents": [
               { "type": "file", "name": "dune/abstractions/balancer/view_add_liquidity.sql" },
               { "type": "file", "name": "dune/abstractions/balancer/view_balances.sql" },
+              { "type": "file", "name": "dune/abstractions/balancer/view_lbps.sql" },
+              { "type": "file", "name": "dune/abstractions/balancer/view_pools_liquidity.sql" },
               {
                 "type": "file",
                 "name": "dune/abstractions/balancer/view_pools_tokens_weights.sql"
@@ -121,7 +123,34 @@
             "type": "directory",
             "name": "dune/abstractions/dex",
             "contents": [
-              { "type": "file", "name": "dune/abstractions/dex/trades.sql" },
+              {
+                "type": "directory",
+                "name": "dune/abstractions/dex/trades",
+                "contents": [
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_1inch.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_balancer.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_bancor.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_curve.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_ddex.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_dydx.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_futureswap.sql" },
+                  {
+                    "type": "file",
+                    "name": "dune/abstractions/dex/trades/insert_gnosis_protocol.sql"
+                  },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_idex.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_kyber.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_linkswap.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_loopring.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_mooniswap.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_oasis.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_sushi.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_synthetix.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_uniswap.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/insert_zeroex.sql" },
+                  { "type": "file", "name": "dune/abstractions/dex/trades/trades.sql" }
+                ]
+              },
               { "type": "file", "name": "dune/abstractions/dex/view_token_prices.sql" }
             ]
           },
@@ -355,28 +384,6 @@
       },
       {
         "type": "directory",
-        "name": "dune/chain",
-        "contents": [
-          { "type": "file", "name": "dune/chain/RoutedUniswapSwaps.sql" },
-          { "type": "file", "name": "dune/chain/block_rewards_daily_by_miner.sql" },
-          { "type": "file", "name": "dune/chain/block_rewards_gini.sql" },
-          { "type": "file", "name": "dune/chain/daily_top_miners.sql" },
-          { "type": "file", "name": "dune/chain/gini.sql" },
-          { "type": "file", "name": "dune/chain/gini_daily.sql" },
-          { "type": "file", "name": "dune/chain/gini_sma.sql" },
-          { "type": "file", "name": "dune/chain/hashrate.sql" },
-          { "type": "file", "name": "dune/chain/hashrate_by_day.sql" },
-          { "type": "file", "name": "dune/chain/hashrate_by_hour.sql" },
-          { "type": "file", "name": "dune/chain/hashrate_daily_average.sql" },
-          { "type": "file", "name": "dune/chain/hashrate_sma.sql" },
-          { "type": "file", "name": "dune/chain/miners_by_reward_monthly.sql" },
-          { "type": "file", "name": "dune/chain/onchain_transactions_all.sql" },
-          { "type": "file", "name": "dune/chain/rich_list.sql" },
-          { "type": "file", "name": "dune/chain/top_miners.sql" }
-        ]
-      },
-      {
-        "type": "directory",
         "name": "dune/defi",
         "contents": [
           { "type": "file", "name": "dune/defi/AUM_for_DPI.sql" },
@@ -432,6 +439,28 @@
           { "type": "file", "name": "dune/generic/gas-costs-for-typical-actions.sql" },
           { "type": "file", "name": "dune/generic/gas-token-mint-gas-price.sql" },
           { "type": "file", "name": "dune/generic/list-of-USDT-Banned-Addresses.sql" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/homestead",
+        "contents": [
+          { "type": "file", "name": "dune/homestead/RoutedUniswapSwaps.sql" },
+          { "type": "file", "name": "dune/homestead/block_rewards_daily_by_miner.sql" },
+          { "type": "file", "name": "dune/homestead/block_rewards_gini.sql" },
+          { "type": "file", "name": "dune/homestead/daily_top_miners.sql" },
+          { "type": "file", "name": "dune/homestead/gini.sql" },
+          { "type": "file", "name": "dune/homestead/gini_daily.sql" },
+          { "type": "file", "name": "dune/homestead/gini_sma.sql" },
+          { "type": "file", "name": "dune/homestead/hashrate.sql" },
+          { "type": "file", "name": "dune/homestead/hashrate_by_day.sql" },
+          { "type": "file", "name": "dune/homestead/hashrate_by_hour.sql" },
+          { "type": "file", "name": "dune/homestead/hashrate_daily_average.sql" },
+          { "type": "file", "name": "dune/homestead/hashrate_sma.sql" },
+          { "type": "file", "name": "dune/homestead/miners_by_reward_monthly.sql" },
+          { "type": "file", "name": "dune/homestead/onchain_transactions_all.sql" },
+          { "type": "file", "name": "dune/homestead/rich_list.sql" },
+          { "type": "file", "name": "dune/homestead/top_miners.sql" }
         ]
       },
       { "type": "file", "name": "dune/index.json" },
@@ -703,8 +732,46 @@
           { "type": "file", "name": "dune/sushiswap/top_masterChef_LPs.sql" },
           { "type": "file", "name": "dune/sushiswap/unique_7d_traders.sql" }
         ]
+      },
+      {
+        "type": "directory",
+        "name": "dune/xdai",
+        "contents": [
+          { "type": "file", "name": "dune/xdai/README.md" },
+          {
+            "type": "directory",
+            "name": "dune/xdai/dex",
+            "contents": [{ "type": "file", "name": "dune/xdai/dex/trades.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/xdai/gnosis_protocol",
+            "contents": [
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_balances.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_daily_average_prices.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_movement.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_price_batch.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_tokens.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_trade_stats.sql" },
+              { "type": "file", "name": "dune/xdai/gnosis_protocol/view_trades.sql" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "dune/xdai/perp",
+            "contents": [{ "type": "file", "name": "dune/xdai/perp/view_amm.sql" }]
+          },
+          {
+            "type": "directory",
+            "name": "dune/xdai/public",
+            "contents": [
+              { "type": "file", "name": "dune/xdai/public/bytea2numeric.sql" },
+              { "type": "file", "name": "dune/xdai/public/numeric2bytea.sql" }
+            ]
+          }
+        ]
       }
     ]
   },
-  { "type": "report", "directories": 73, "files": 262 }
+  { "type": "report", "directories": 79, "files": 294 }
 ]
