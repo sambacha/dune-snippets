@@ -12,6 +12,13 @@
 
 * **dev:** fix semantic release ([fc6ef34](https://github.com/sambacha/dune-snippets/commit/fc6ef3471f39565af75a8ee93663a624c910af9b))
 
+## [1.7.1](https://github.com/sambacha/dune-snippets/compare/v1.7.0...v1.7.1) (2021-04-06)
+
+
+### Bug Fixes
+
+* **dev:** fix semantic release ([fc6ef34](https://github.com/sambacha/dune-snippets/commit/fc6ef3471f39565af75a8ee93663a624c910af9b))
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
