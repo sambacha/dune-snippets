@@ -1,3 +1,4 @@
+<pre>
 rewrite dune/abstractions/async_art_v2/async_art_v2_token_mapping.sql (98%)
 rewrite dune/abstractions/balancer/view_add_liquidity.sql (100%)
 rewrite dune/abstractions/balancer/view_balances.sql (87%)
@@ -139,3 +140,4 @@ copy dune/{abstractions => xdai}/public/numeric2bytea.sql (100%)
 delete mode 100644 labels/ethereum/account_type.sql
 create mode 100644 prices/prices.ini
 create mode 100644 prices/prices.toml
+</pre>
