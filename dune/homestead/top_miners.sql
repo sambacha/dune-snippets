@@ -1,6 +1,4 @@
-#standardSQL
---MIT License-- Copyright (c) 2019 Yaz Khoury,
-    yaz.khoury @gmail.com WITH mined_block
+   WITH mined_block
     AS (SELECT miner,
         DATE (timestamp) FROM
       `bigquery - public

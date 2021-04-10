@@ -1,6 +1,4 @@
-#standardSQL
---MIT License-- Copyright (c) 2019 Yaz Khoury,
-    yaz.khoury @gmail.com WITH total_reward_book
+   WITH total_reward_book
     AS (SELECT miner, DATE (timestamp) AS date,
         COUNT (miner) AS total_block_reward FROM
       `bigquery - public
