@@ -75,7 +75,7 @@ Standard: c++20
 SortIncludes: true
 IncludeBlocks: Preserve
 IncludeCategories:
-    # Relative Paths
+  # Relative Paths
   - Regex: '^"'
     Priority: 1
 
@@ -136,4 +136,3 @@ BreakAfterJavaFieldAnnotations: true
 Language: JavaScript
 JavaScriptQuotes: Double
 JavaScriptWrapImports: true
-...
