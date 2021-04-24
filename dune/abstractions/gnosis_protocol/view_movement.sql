@@ -209,14 +209,13 @@ SELECT
     balances.balance_deposited_atoms    
 FROM balances;
 
-CREATE UNIQUE INDEX IF NOT EXISTS view_movement_id ON
-    gnosis_protocol.view_movement (trader, batch_id, token);
+
+CREATE UNIQUE INDEX IF NOT EXISTS view_movement_id ON gnosis_protocol.view_movement (trader, batch_id, token) ;
 CREATE INDEX view_movement_1 ON gnosis_protocol.view_movement (token_symbol);
 CREATE INDEX view_movement_2 ON gnosis_protocol.view_movement (token);
 CREATE INDEX view_movement_3 ON gnosis_protocol.view_movement (batch_id);
 
-INSERT INTO cron.job (schedule, command) VALUES (
-    '*/5 * * * *',
-    'REFRESH MATERIALIZED VIEW CONCURRENTLY gnosis_protocol.view_movement') ON
-    CONFLICT (command) DO UPDATE SET schedule = EXCLUDED.schedule;
+INSERT INTO cron.job (schedule, command)
+VALUES ('*/5 * * * *', 'REFRESH MATERIALIZED VIEW CONCURRENTLY gnosis_protocol.view_movement')
+ON CONFLICT (command) DO UPDATE SET schedule=EXCLUDED.schedule;
 COMMIT;
