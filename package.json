@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/sambacha/dune-snippets#readme",
   "devDependencies": {
-    "prettier": "2.2.1",
+    "prettier": "2.3.2",
     "clang-format": "*"
   }
 }
