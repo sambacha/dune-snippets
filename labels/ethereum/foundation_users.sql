@@ -1,9 +1,9 @@
 SELECT
-  address,
-  name AS label,
-  'foundation user' AS type,
-  'foundation' AS author
+    address,
+    name AS label,
+    'foundation user' as type,
+    'foundation' as author
 FROM
-  foundation.user_names
+    foundation.user_names
 WHERE
-  updated_at >= '{{timestamp}}';
+    updated_at >= '{{timestamp}}'
