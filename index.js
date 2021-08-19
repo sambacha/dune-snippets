@@ -1,674 +1,1004 @@
- module.exports = [
-  {"type":"directory","name":"dune/","contents":[
-    {"type":"file","name":"README.md"},
-    {"type":"directory","name":"aave","contents":[
-      {"type":"file","name":"view_atokens.sql"}
-    ]},
-    {"type":"directory","name":"abstractions","contents":[
-      {"type":"file","name":"README.md"},
-      {"type":"directory","name":"aave","contents":[
-        {"type":"file","name":"view_atokens.sql"}
-      ]},
-      {"type":"directory","name":"async_art_v2","contents":[
-        {"type":"file","name":"async_art_v2_token_mapping.sql"}
-      ]},
-      {"type":"directory","name":"balancer","contents":[
-        {"type":"file","name":"view_add_liquidity.sql"},
-        {"type":"file","name":"view_balances.sql"},
-        {"type":"file","name":"view_lbps.sql"},
-        {"type":"file","name":"view_pools_liquidity.sql"},
-        {"type":"file","name":"view_pools_tokens_weights.sql"},
-        {"type":"file","name":"view_remove_liquidity.sql"},
-        {"type":"file","name":"view_swaps.sql"}
-      ]},
-      {"type":"directory","name":"bancornetwork","contents":[
-        {"type":"file","name":"view_add_convertible_token.sql"},
-        {"type":"file","name":"view_add_liquidity_pool.sql"},
-        {"type":"file","name":"view_add_smart_token.sql"},
-        {"type":"file","name":"view_convert.sql"},
-        {"type":"file","name":"view_remove_convertible_token.sql"},
-        {"type":"file","name":"view_remove_liquidity_pool.sql"},
-        {"type":"file","name":"view_remove_smart_token.sql"},
-        {"type":"file","name":"view_smart_tokens.sql"},
-        {"type":"file","name":"view_update_conversion_fee.sql"},
-        {"type":"file","name":"view_update_price_data.sql"},
-        {"type":"file","name":"view_update_token_rate.sql"}
-      ]},
-      {"type":"directory","name":"chainlink","contents":[
-        {"type":"file","name":"view_aggregator_mappings.sql"}
-      ]},
-      {"type":"directory","name":"compound","contents":[
-        {"type":"file","name":"view_accrue_interest.sql"},
-        {"type":"file","name":"view_borrow.sql"},
-        {"type":"file","name":"view_ctokens.sql"},
-        {"type":"file","name":"view_liquidate_borrow.sql"},
-        {"type":"file","name":"view_mint.sql"},
-        {"type":"file","name":"view_redeem.sql"},
-        {"type":"file","name":"view_repay_borrow.sql"},
-        {"type":"file","name":"view_transfer_ctoken.sql"}
-      ]},
-      {"type":"directory","name":"curvefi","contents":[
-        {"type":"file","name":"view_trades.sql"}
-      ]},
-      {"type":"directory","name":"dex","contents":[
-        {"type":"directory","name":"trades","contents":[
-          {"type":"file","name":"insert_1inch.sql"},
-          {"type":"file","name":"insert_balancer.sql"},
-          {"type":"file","name":"insert_bancor.sql"},
-          {"type":"file","name":"insert_curve.sql"},
-          {"type":"file","name":"insert_ddex.sql"},
-          {"type":"file","name":"insert_dydx.sql"},
-          {"type":"file","name":"insert_futureswap.sql"},
-          {"type":"file","name":"insert_gnosis_protocol.sql"},
-          {"type":"file","name":"insert_idex.sql"},
-          {"type":"file","name":"insert_kyber.sql"},
-          {"type":"file","name":"insert_linkswap.sql"},
-          {"type":"file","name":"insert_loopring.sql"},
-          {"type":"file","name":"insert_mooniswap.sql"},
-          {"type":"file","name":"insert_oasis.sql"},
-          {"type":"file","name":"insert_sushi.sql"},
-          {"type":"file","name":"insert_synthetix.sql"},
-          {"type":"file","name":"insert_uniswap.sql"},
-          {"type":"file","name":"insert_zeroex.sql"},
-          {"type":"file","name":"trades.sql"}
-        ]},
-        {"type":"file","name":"view_token_prices.sql"}
-      ]},
-      {"type":"directory","name":"erasure_bay","contents":[
-        {"type":"file","name":"view_burn.sql"},
-        {"type":"file","name":"view_deposit_reward.sql"},
-        {"type":"file","name":"view_deposit_stake.sql"},
-        {"type":"file","name":"view_finalize.sql"},
-        {"type":"file","name":"view_request_data.sql"},
-        {"type":"file","name":"view_submit_data.sql"}
-      ]},
-      {"type":"directory","name":"erasure_numerai","contents":[
-        {"type":"file","name":"view_burn.sql"},
-        {"type":"file","name":"view_reward.sql"},
-        {"type":"file","name":"view_stake.sql"}
-      ]},
-      {"type":"directory","name":"erasure_quant","contents":[
-        {"type":"file","name":"view_burn.sql"},
-        {"type":"file","name":"view_reward.sql"},
-        {"type":"file","name":"view_stake.sql"}
-      ]},
-      {"type":"directory","name":"erc20","contents":[
-        {"type":"file","name":"stablecoins.sql"},
-        {"type":"file","name":"tokens.sql"}
-      ]},
-      {"type":"directory","name":"ethereumnameservice","contents":[
-        {"type":"file","name":"old_preimages.sql"},
-        {"type":"file","name":"view_expirations.sql"},
-        {"type":"file","name":"view_registrations.sql"},
-        {"type":"file","name":"view_registries.sql"},
-        {"type":"file","name":"view_renewals.sql"}
-      ]},
-      {"type":"directory","name":"gnosis_protocol","contents":[
-        {"type":"file","name":"known_address.sql"},
-        {"type":"file","name":"view_balances.sql"},
-        {"type":"file","name":"view_daily_average_prices.sql"},
-        {"type":"file","name":"view_movement.sql"},
-        {"type":"file","name":"view_price_batch.sql"},
-        {"type":"file","name":"view_tokens.sql"},
-        {"type":"file","name":"view_trade_stats.sql"},
-        {"type":"file","name":"view_trades.sql"}
-      ]},
-      {"type":"directory","name":"gnosis_safe","contents":[
-        {"type":"file","name":"view_safes.sql"}
-      ]},
-      {"type":"directory","name":"iearn_v1","contents":[
-        {"type":"file","name":"view_ytokens.sql"}
-      ]},
-      {"type":"directory","name":"iearn_v2","contents":[
-        {"type":"file","name":"view_ytokens.sql"}
-      ]},
-      {"type":"directory","name":"index","contents":[
-        {"type":"file","name":"view_indices.sql"},
-        {"type":"file","name":"view_indices_assets.sql"}
-      ]},
-      {"type":"directory","name":"lending","contents":[
-        {"type":"file","name":"borrow.sql"},
-        {"type":"file","name":"collateral_change.sql"},
-        {"type":"file","name":"repay.sql"}
-      ]},
-      {"type":"directory","name":"loopring","contents":[
-        {"type":"file","name":"fn_decode_float_16.sql"},
-        {"type":"file","name":"fn_decode_float_24.sql"},
-        {"type":"file","name":"fn_process_block_v2.sql"},
-        {"type":"file","name":"fn_process_trade_block_v1.sql"}
-      ]},
-      {"type":"directory","name":"makermcd","contents":[
-        {"type":"file","name":"collateral_addresses.sql"}
-      ]},
-      {"type":"directory","name":"oneinch","contents":[
-        {"type":"file","name":"swaps.sql"}
-      ]},
-      {"type":"directory","name":"oneproto","contents":[
-        {"type":"file","name":"swaps.sql"}
-      ]},
-      {"type":"directory","name":"onesplit","contents":[
-        {"type":"file","name":"swaps.sql"}
-      ]},
-      {"type":"directory","name":"public","contents":[
-        {"type":"file","name":"bytea2numeric.sql"},
-        {"type":"file","name":"numeric2bytea.sql"}
-      ]},
-      {"type":"directory","name":"stablecoin","contents":[
-        {"type":"file","name":"burn.sql"},
-        {"type":"file","name":"mint.sql"},
-        {"type":"file","name":"transfer.sql"}
-      ]},
-      {"type":"directory","name":"synthetix","contents":[
-        {"type":"file","name":"rates.sql"},
-        {"type":"file","name":"symbols.sql"},
-        {"type":"file","name":"synths.sql"},
-        {"type":"file","name":"trades.sql"}
-      ]},
-      {"type":"directory","name":"token_balances","contents":[
-        {"type":"file","name":"project_addresses.sql"}
-      ]},
-      {"type":"directory","name":"uniswap_merkle","contents":[
-        {"type":"file","name":"mrkl.sql"}
-      ]},
-      {"type":"directory","name":"uniswap_v1","contents":[
-        {"type":"file","name":"view_add_liquidity.sql"},
-        {"type":"file","name":"view_eth_purchase.sql"},
-        {"type":"file","name":"view_new_exchange.sql"},
-        {"type":"file","name":"view_remove_liquidity.sql"},
-        {"type":"file","name":"view_token_purchase.sql"}
-      ]},
-      {"type":"directory","name":"unit_protocol","contents":[
-        {"type":"file","name":"view_tokens.sql"}
-      ]},
-      {"type":"directory","name":"yamfinance","contents":[
-        {"type":"file","name":"pools.sql"}
-      ]},
-      {"type":"directory","name":"yearn","contents":[
-        {"type":"file","name":"view_ytokens.sql"}
-      ]},
-      {"type":"directory","name":"zeroex","contents":[
-        {"type":"file","name":"view_0x_api_fills.sql"},
-        {"type":"file","name":"view_affiliate_data.sql"},
-        {"type":"file","name":"view_current_epoch.sql"},
-        {"type":"file","name":"view_epochs.sql"},
-        {"type":"file","name":"view_fills.sql"},
-        {"type":"file","name":"view_rewards_paid.sql"},
-        {"type":"file","name":"view_staking_parameters.sql"},
-        {"type":"file","name":"view_staking_pools.sql"},
-        {"type":"file","name":"view_zrx_staking_changes.sql"}
-      ]}
-    ]},
-    {"type":"directory","name":"async_art_v2","contents":[
-      {"type":"file","name":"async_art_v2_token_mapping.sql"}
-    ]},
-    {"type":"directory","name":"balancer","contents":[
-      {"type":"file","name":"view_add_liquidity.sql"},
-      {"type":"file","name":"view_balances.sql"},
-      {"type":"file","name":"view_lbps.sql"},
-      {"type":"file","name":"view_pools_liquidity.sql"},
-      {"type":"file","name":"view_pools_tokens_weights.sql"},
-      {"type":"file","name":"view_remove_liquidity.sql"},
-      {"type":"file","name":"view_swaps.sql"},
-      {"type":"file","name":"view_trades.sql"}
-    ]},
-    {"type":"directory","name":"bancornetwork","contents":[
-      {"type":"file","name":"view_add_convertible_token.sql"},
-      {"type":"file","name":"view_add_liquidity_pool.sql"},
-      {"type":"file","name":"view_add_smart_token.sql"},
-      {"type":"file","name":"view_convert.sql"},
-      {"type":"file","name":"view_remove_convertible_token.sql"},
-      {"type":"file","name":"view_remove_liquidity_pool.sql"},
-      {"type":"file","name":"view_remove_smart_token.sql"},
-      {"type":"file","name":"view_smart_tokens.sql"},
-      {"type":"file","name":"view_update_conversion_fee.sql"},
-      {"type":"file","name":"view_update_price_data.sql"},
-      {"type":"file","name":"view_update_token_rate.sql"}
-    ]},
-    {"type":"directory","name":"base","contents":[
-      {"type":"file","name":"_price.sql"}
-    ]},
-    {"type":"directory","name":"chainlink","contents":[
-      {"type":"file","name":"view_aggregator_mappings.sql"}
-    ]},
-    {"type":"directory","name":"clipper","contents":[
-      {"type":"file","name":"view_trades.sql"}
-    ]},
-    {"type":"directory","name":"compound","contents":[
-      {"type":"file","name":"view_ctokens.sql"}
-    ]},
-    {"type":"directory","name":"curvefi","contents":[
-      {"type":"file","name":"view_trades.sql"}
-    ]},
-    {"type":"directory","name":"defi","contents":[
-      {"type":"file","name":"AUM_for_DPI.sql"},
-      {"type":"file","name":"AverageGweiPricePerHour.sql"},
-      {"type":"file","name":"Curve_SUSD_YUSD.sql"},
-      {"type":"file","name":"DAI_PriceFluc.sql"},
-      {"type":"file","name":"GasCosts_for_typical_Actions_RecentGweiPricing.sql"},
-      {"type":"file","name":"Idle_AUM.sql"},
-      {"type":"file","name":"MakerDAO_LiquidationsPerHour.sql"},
-      {"type":"file","name":"StrategyGenericLevCompFarm_evt_Harvested.sql"},
-      {"type":"file","name":"StrategyHegicETH_evt_Harvested.sql"},
-      {"type":"file","name":"TotalNumberOfTransactions_SmartWalletsOnly.sql"},
-      {"type":"file","name":"TotalStableTokens_StoreInSmartWallets.sql"},
-      {"type":"file","name":"YETH_FunctionCounts_Daily.sql"},
-      {"type":"file","name":"YFI_DailyRewards_Claimed.sql"},
-      {"type":"file","name":"yVault_yCrv_Cumlative.sql"},
-      {"type":"file","name":"yVault_yUSDT_Cumaltive.sql"},
-      {"type":"file","name":"yVault_yUSD_Cumaltive.sql"},
-      {"type":"file","name":"yVault_yaLINK_Cumulative.sql"}
-    ]},
-    {"type":"directory","name":"dex","contents":[
-      {"type":"directory","name":"trades","contents":[
-        {"type":"file","name":"insert_1inch.sql"},
-        {"type":"file","name":"insert_1inch_lp.sql"},
-        {"type":"file","name":"insert_airswap.sql"},
-        {"type":"file","name":"insert_balancer.sql"},
-        {"type":"file","name":"insert_bancor.sql"},
-        {"type":"file","name":"insert_clipper.sql"},
-        {"type":"file","name":"insert_curve.sql"},
-        {"type":"file","name":"insert_ddex.sql"},
-        {"type":"file","name":"insert_dodo.sql"},
-        {"type":"file","name":"insert_dydx.sql"},
-        {"type":"file","name":"insert_futureswap.sql"},
-        {"type":"file","name":"insert_gnosis_protocol.sql"},
-        {"type":"file","name":"insert_idex.sql"},
-        {"type":"file","name":"insert_kyber.sql"},
-        {"type":"file","name":"insert_linkswap.sql"},
-        {"type":"file","name":"insert_loopring.sql"},
-        {"type":"file","name":"insert_mooniswap.sql"},
-        {"type":"file","name":"insert_oasis.sql"},
-        {"type":"file","name":"insert_paraswap.sql"},
-        {"type":"file","name":"insert_sushi.sql"},
-        {"type":"file","name":"insert_swapr.sql"},
-        {"type":"file","name":"insert_synthetix.sql"},
-        {"type":"file","name":"insert_tokenlon.sql"},
-        {"type":"file","name":"insert_uniswap.sql"},
-        {"type":"file","name":"insert_zeroex.sql"},
-        {"type":"file","name":"trades.sql"}
-      ]},
-      {"type":"file","name":"view_token_prices.sql"}
-    ]},
-    {"type":"directory","name":"dodo","contents":[
-      {"type":"file","name":"view_markets.sql"}
-    ]},
-    {"type":"directory","name":"erasure_bay","contents":[
-      {"type":"file","name":"view_burn.sql"},
-      {"type":"file","name":"view_deposit_reward.sql"},
-      {"type":"file","name":"view_deposit_stake.sql"},
-      {"type":"file","name":"view_finalize.sql"},
-      {"type":"file","name":"view_request_data.sql"},
-      {"type":"file","name":"view_submit_data.sql"}
-    ]},
-    {"type":"directory","name":"erasure_numerai","contents":[
-      {"type":"file","name":"view_burn.sql"},
-      {"type":"file","name":"view_reward.sql"},
-      {"type":"file","name":"view_stake.sql"}
-    ]},
-    {"type":"directory","name":"erasure_quant","contents":[
-      {"type":"file","name":"view_burn.sql"},
-      {"type":"file","name":"view_reward.sql"},
-      {"type":"file","name":"view_stake.sql"}
-    ]},
-    {"type":"directory","name":"erc20","contents":[
-      {"type":"file","name":"stablecoins.sql"},
-      {"type":"file","name":"tokens.sql"}
-    ]},
-    {"type":"directory","name":"ethereumnameservice","contents":[
-      {"type":"file","name":"old_preimages.sql"},
-      {"type":"file","name":"view_expirations.sql"},
-      {"type":"file","name":"view_registrations.sql"},
-      {"type":"file","name":"view_registries.sql"},
-      {"type":"file","name":"view_renewals.sql"}
-    ]},
-    {"type":"directory","name":"foundation","contents":[
-      {"type":"file","name":"usernames.sql"}
-    ]},
-    {"type":"directory","name":"gas","contents":[
-      {"type":"file","name":"25PercentMedianGasPrice_hourly.sql"},
-      {"type":"file","name":"BackRunningBots_DailyGasUsage.sql"},
-      {"type":"file","name":"BlocksFilledAvgPerHr.sql"},
-      {"type":"file","name":"CumulativeGasPrices_5mins.sql"},
-      {"type":"file","name":"GasCostEstimate_TypicalTransaction.sql"},
-      {"type":"file","name":"GasPriceRanges_hourly.sql"},
-      {"type":"file","name":"MEV_ZeroCostTx.sql"},
-      {"type":"file","name":"MedianGasPrice_24hrs.sql"},
-      {"type":"file","name":"MedianGasPrice_weekly.sql"},
-      {"type":"file","name":"Proportion_of_AvgUsed.sql"},
-      {"type":"file","name":"TotalDeposits_Coinbase.sql"},
-      {"type":"file","name":"TransactionsPercentTotal_argent.sql"},
-      {"type":"file","name":"YVaultDailyCostUSD_Yearn.sql"},
-      {"type":"file","name":"YVaultHourlyCostUSD_Yearn.sql"}
-    ]},
-    {"type":"directory","name":"generic","contents":[
-      {"type":"file","name":"avg-gas-price-per-hour.sql"},
-      {"type":"file","name":"avg.sql"},
-      {"type":"file","name":"contract-delpoyments-per-month.sql"},
-      {"type":"file","name":"ethereum-gas-usd-per-day.sql"},
-      {"type":"file","name":"gas-costs-for-typical-actions.sql"},
-      {"type":"file","name":"gas-token-mint-gas-price.sql"},
-      {"type":"file","name":"list-of-USDT-Banned-Addresses.sql"}
-    ]},
-    {"type":"directory","name":"gnosis_protocol","contents":[
-      {"type":"file","name":"known_address.sql"},
-      {"type":"file","name":"view_balances.sql"},
-      {"type":"file","name":"view_daily_average_prices.sql"},
-      {"type":"file","name":"view_movement.sql"},
-      {"type":"file","name":"view_price_batch.sql"},
-      {"type":"file","name":"view_tokens.sql"},
-      {"type":"file","name":"view_trade_stats.sql"},
-      {"type":"file","name":"view_trades.sql"}
-    ]},
-    {"type":"directory","name":"gnosis_safe","contents":[
-      {"type":"file","name":"view_safes.sql"}
-    ]},
-    {"type":"directory","name":"homestead","contents":[
-      {"type":"file","name":"RoutedUniswapSwaps.sql"},
-      {"type":"file","name":"block_rewards_daily_by_miner.sql"},
-      {"type":"file","name":"block_rewards_gini.sql"},
-      {"type":"file","name":"gini.sql"},
-      {"type":"file","name":"gini_daily.sql"},
-      {"type":"file","name":"gini_sma.sql"},
-      {"type":"file","name":"hashrate.sql"},
-      {"type":"file","name":"hashrate_by_day.sql"},
-      {"type":"file","name":"hashrate_by_hour.sql"},
-      {"type":"file","name":"hashrate_daily_average.sql"},
-      {"type":"file","name":"hashrate_sma.sql"},
-      {"type":"file","name":"miners_by_reward_monthly.sql"},
-      {"type":"file","name":"onchain_transactions_all.sql"},
-      {"type":"file","name":"rich_list.sql"},
-      {"type":"file","name":"top_miners.sql"}
-    ]},
-    {"type":"directory","name":"iearn_v1","contents":[
-      {"type":"file","name":"view_ytokens.sql"}
-    ]},
-    {"type":"directory","name":"iearn_v2","contents":[
-      {"type":"file","name":"view_ytokens.sql"}
-    ]},
-    {"type":"directory","name":"index","contents":[
-      {"type":"file","name":"view_indices.sql"},
-      {"type":"file","name":"view_indices_assets.sql"}
-    ]},
-    {"type":"file","name":"index.json"},
-    {"type":"directory","name":"larvalabs","contents":[
-      {"type":"file","name":"crypto_punks_attributes.sql"}
-    ]},
-    {"type":"directory","name":"lending","contents":[
-      {"type":"file","name":"borrow.sql"},
-      {"type":"file","name":"collateral_change.sql"},
-      {"type":"file","name":"repay.sql"}
-    ]},
-    {"type":"directory","name":"loopring","contents":[
-      {"type":"file","name":"fn_decode_float_16.sql"},
-      {"type":"file","name":"fn_decode_float_24.sql"},
-      {"type":"file","name":"fn_process_block_v2.sql"},
-      {"type":"file","name":"fn_process_trade_block_v1.sql"}
-    ]},
-    {"type":"directory","name":"makerdao","contents":[
-      {"type":"file","name":"Interest_Collateral_Revnue.sql"},
-      {"type":"file","name":"Interest_Monthly_Rev.sql"},
-      {"type":"file","name":"PSM_Monthly.sql"},
-      {"type":"file","name":"PnL.sql"}
-    ]},
-    {"type":"directory","name":"makermcd","contents":[
-      {"type":"file","name":"collateral_addresses.sql"}
-    ]},
-    {"type":"directory","name":"nft","contents":[
-      {"type":"file","name":"tokens.sql"},
-      {"type":"directory","name":"trades","contents":[
-        {"type":"file","name":"README.md"},
-        {"type":"file","name":"insert_cryptopunks.sql"},
-        {"type":"file","name":"insert_foundation.sql"},
-        {"type":"file","name":"insert_opensea.sql"},
-        {"type":"file","name":"insert_rarible.sql"},
-        {"type":"file","name":"insert_superrare.sql"},
-        {"type":"file","name":"trades.sql"}
-      ]}
-    ]},
-    {"type":"directory","name":"nft_traits","contents":[
-      {"type":"file","name":"wicked_cranium_attributes.sql"}
-    ]},
-    {"type":"directory","name":"oneinch","contents":[
-      {"type":"file","name":"swaps.sql"}
-    ]},
-    {"type":"directory","name":"oneproto","contents":[
-      {"type":"file","name":"swaps.sql"}
-    ]},
-    {"type":"directory","name":"onesplit","contents":[
-      {"type":"file","name":"swaps.sql"}
-    ]},
-    {"type":"directory","name":"public","contents":[
-      {"type":"file","name":"bytea2numeric.sql"},
-      {"type":"file","name":"numeric2bytea.sql"}
-    ]},
-    {"type":"directory","name":"src","contents":[
-      {"type":"directory","name":"NFT","contents":[
-        {"type":"directory","name":"erc721","contents":[
-          {"type":"file","name":"top_tokens_by_transfer.sql"}
-        ]}
-      ]},
-      {"type":"directory","name":"aave","contents":[
-        {"type":"file","name":"view_atokens.sql"}
-      ]},
-      {"type":"directory","name":"balancer","contents":[
-        {"type":"file","name":"view_add_liquidity.sql"},
-        {"type":"file","name":"view_remove_liquidity.sql"},
-        {"type":"file","name":"view_swaps.sql"}
-      ]},
-      {"type":"directory","name":"bancornetwork","contents":[
-        {"type":"file","name":"view_add_convertible_token.sql"},
-        {"type":"file","name":"view_add_liquidity_pool.sql"},
-        {"type":"file","name":"view_add_smart_token.sql"},
-        {"type":"file","name":"view_convert.sql"},
-        {"type":"file","name":"view_remove_convertible_token.sql"},
-        {"type":"file","name":"view_remove_liquidity_pool.sql"},
-        {"type":"file","name":"view_remove_smart_token.sql"},
-        {"type":"file","name":"view_smart_tokens.sql"},
-        {"type":"file","name":"view_update_conversion_fee.sql"},
-        {"type":"file","name":"view_update_price_data.sql"},
-        {"type":"file","name":"view_update_token_rate.sql"}
-      ]},
-      {"type":"file","name":"borrow.sql"},
-      {"type":"file","name":"collateral.sql"},
-      {"type":"directory","name":"compound","contents":[
-        {"type":"file","name":"view_accrue_interest.sql"},
-        {"type":"file","name":"view_borrow.sql"},
-        {"type":"file","name":"view_ctokens.sql"},
-        {"type":"file","name":"view_liquidate_borrow.sql"},
-        {"type":"file","name":"view_mint.sql"},
-        {"type":"file","name":"view_redeem.sql"},
-        {"type":"file","name":"view_repay_borrow.sql"},
-        {"type":"file","name":"view_transfer_ctoken.sql"}
-      ]},
-      {"type":"directory","name":"curvefi","contents":[
-        {"type":"file","name":"all_Liqudity.sql"},
-        {"type":"file","name":"dai_liquidity_daily.sql"},
-        {"type":"file","name":"usdc_volume_daily.sql"},
-        {"type":"file","name":"view_trades.sql"},
-        {"type":"file","name":"wbtc_liquidity_daily.sql"}
-      ]},
-      {"type":"directory","name":"dex","contents":[
-        {"type":"file","name":"trades.sql"}
-      ]},
-      {"type":"directory","name":"erc20","contents":[
-        {"type":"file","name":"stablecoins.sql"},
-        {"type":"file","name":"tokens.sql"}
-      ]},
-      {"type":"directory","name":"ethereumnameservice","contents":[
-        {"type":"file","name":"old_preimages.sql"},
-        {"type":"file","name":"view_expirations.sql"},
-        {"type":"file","name":"view_registrations.sql"},
-        {"type":"file","name":"view_registries.sql"},
-        {"type":"file","name":"view_renewals.sql"}
-      ]},
-      {"type":"directory","name":"gnosis_protocol","contents":[
-        {"type":"file","name":"known_address.sql"},
-        {"type":"file","name":"view_balances.sql"},
-        {"type":"file","name":"view_movement.sql"},
-        {"type":"file","name":"view_price_batch.sql"},
-        {"type":"file","name":"view_tokens.sql"},
-        {"type":"file","name":"view_trade_stats.sql"},
-        {"type":"file","name":"view_trades.sql"}
-      ]},
-      {"type":"directory","name":"gnosis_safe","contents":[
-        {"type":"file","name":"view_safes.sql"}
-      ]},
-      {"type":"directory","name":"iearn_v1","contents":[
-        {"type":"file","name":"view_ytokens.sql"}
-      ]},
-      {"type":"directory","name":"iearn_v2","contents":[
-        {"type":"file","name":"view_ytokens.sql"}
-      ]},
-      {"type":"directory","name":"lending","contents":[
-        {"type":"file","name":"borrow.sql"},
-        {"type":"file","name":"collateral.sql"},
-        {"type":"file","name":"repay.sql"}
-      ]},
-      {"type":"directory","name":"loopring","contents":[
-        {"type":"file","name":"fn_decode_float.sql"},
-        {"type":"file","name":"fn_process_trade_block.sql"}
-      ]},
-      {"type":"directory","name":"makermcd","contents":[
-        {"type":"file","name":"collateral_addresses.sql"}
-      ]},
-      {"type":"directory","name":"mev","contents":[
-        {"type":"file","name":"zero_gwei.sql"}
-      ]},
-      {"type":"directory","name":"oneinch","contents":[
-        {"type":"file","name":"view_swaps.sql"}
-      ]},
-      {"type":"directory","name":"oneproto","contents":[
-        {"type":"file","name":"view_swaps.sql"}
-      ]},
-      {"type":"directory","name":"onesplit","contents":[
-        {"type":"file","name":"view_swaps.sql"}
-      ]},
-      {"type":"file","name":"repay.sql"},
-      {"type":"directory","name":"stablecoin","contents":[
-        {"type":"file","name":"view_transfers.sql"}
-      ]},
-      {"type":"directory","name":"synthetix","contents":[
-        {"type":"file","name":"rates.sql"},
-        {"type":"file","name":"symbols.sql"},
-        {"type":"file","name":"synths.sql"},
-        {"type":"file","name":"trades.sql"}
-      ]},
-      {"type":"directory","name":"token_balances","contents":[
-        {"type":"file","name":"project_addresses.sql"}
-      ]},
-      {"type":"directory","name":"uniswap","contents":[
-        {"type":"file","name":"view_add_liquidity.sql"},
-        {"type":"file","name":"view_eth_purchase.sql"},
-        {"type":"file","name":"view_new_exchange.sql"},
-        {"type":"file","name":"view_remove_liquidity.sql"},
-        {"type":"file","name":"view_token_purchase.sql"}
-      ]},
-      {"type":"directory","name":"uniswap_merkle","contents":[
-        {"type":"file","name":"mrkl.sql"}
-      ]},
-      {"type":"directory","name":"yamfinance","contents":[
-        {"type":"file","name":"pools.sql"}
-      ]},
-      {"type":"directory","name":"yearn","contents":[
-        {"type":"file","name":"view_ytokens.sql"},
-        {"type":"file","name":"ycrv_deposit.sql"},
-        {"type":"file","name":"yvault_ycrv_cul.sql"}
-      ]},
-      {"type":"directory","name":"zeroex","contents":[
-        {"type":"file","name":"view_affiliate_data.sql"},
-        {"type":"file","name":"view_current_epoch.sql"},
-        {"type":"file","name":"view_epochs.sql"},
-        {"type":"file","name":"view_fills.sql"},
-        {"type":"file","name":"view_rewards_paid.sql"},
-        {"type":"file","name":"view_staking_parameters.sql"},
-        {"type":"file","name":"view_staking_pools.sql"},
-        {"type":"file","name":"view_zrx_staking_changes.sql"}
-      ]}
-    ]},
-    {"type":"directory","name":"stablecoin","contents":[
-      {"type":"file","name":"burn.sql"},
-      {"type":"file","name":"mint.sql"},
-      {"type":"file","name":"transfer.sql"}
-    ]},
-    {"type":"directory","name":"sushiswap","contents":[
-      {"type":"file","name":"7d_protocol_fees.sql"},
-      {"type":"file","name":"GMV_sushiswap.sql"},
-      {"type":"file","name":"LP_timeline_growth.sql"},
-      {"type":"file","name":"LP_timeline_ratio.sql"},
-      {"type":"file","name":"compare_sushi_uniswap_pools.sql"},
-      {"type":"file","name":"culmulative_volume_sushiswap.sql"},
-      {"type":"file","name":"daily_Unique_Sushi_transactions.sql"},
-      {"type":"file","name":"daily_unique_claims.sql"},
-      {"type":"file","name":"deposits_sushipool_counts.sql"},
-      {"type":"file","name":"top500_Sushi_hodlers.sql"},
-      {"type":"file","name":"top_masterChef_LPs.sql"},
-      {"type":"file","name":"unique_7d_traders.sql"}
-    ]},
-    {"type":"directory","name":"synthetix","contents":[
-      {"type":"file","name":"rates.sql"},
-      {"type":"file","name":"symbols.sql"},
-      {"type":"file","name":"synths.sql"},
-      {"type":"file","name":"trades.sql"}
-    ]},
-    {"type":"directory","name":"token_balances","contents":[
-      {"type":"file","name":"project_addresses.sql"}
-    ]},
-    {"type":"directory","name":"uniswap","contents":[
-      {"type":"file","name":"V2Router.sql"}
-    ]},
-    {"type":"directory","name":"uniswap_merkle","contents":[
-      {"type":"file","name":"mrkl.sql"}
-    ]},
-    {"type":"directory","name":"uniswap_v1","contents":[
-      {"type":"file","name":"view_add_liquidity.sql"},
-      {"type":"file","name":"view_eth_purchase.sql"},
-      {"type":"file","name":"view_new_exchange.sql"},
-      {"type":"file","name":"view_remove_liquidity.sql"},
-      {"type":"file","name":"view_token_purchase.sql"}
-    ]},
-    {"type":"directory","name":"unit_protocol","contents":[
-      {"type":"file","name":"view_tokens.sql"}
-    ]},
-    {"type":"directory","name":"xdai","contents":[
-      {"type":"file","name":"README.md"},
-      {"type":"directory","name":"dex","contents":[
-        {"type":"file","name":"trades.sql"}
-      ]},
-      {"type":"directory","name":"gnosis_protocol","contents":[
-        {"type":"file","name":"view_balances.sql"},
-        {"type":"file","name":"view_daily_average_prices.sql"},
-        {"type":"file","name":"view_movement.sql"},
-        {"type":"file","name":"view_price_batch.sql"},
-        {"type":"file","name":"view_tokens.sql"},
-        {"type":"file","name":"view_trade_stats.sql"},
-        {"type":"file","name":"view_trades.sql"}
-      ]},
-      {"type":"directory","name":"perp","contents":[
-        {"type":"file","name":"view_amm.sql"}
-      ]},
-      {"type":"directory","name":"public","contents":[
-        {"type":"file","name":"bytea2numeric.sql"},
-        {"type":"file","name":"numeric2bytea.sql"}
-      ]}
-    ]},
-    {"type":"directory","name":"yamfinance","contents":[
-      {"type":"file","name":"pools.sql"}
-    ]},
-    {"type":"directory","name":"yearn","contents":[
-      {"type":"file","name":"view_ytokens.sql"}
-    ]},
-    {"type":"directory","name":"zeroex","contents":[
-      {"type":"file","name":"view_0x_api_fills.sql"},
-      {"type":"file","name":"view_affiliate_data.sql"},
-      {"type":"file","name":"view_current_epoch.sql"},
-      {"type":"file","name":"view_epochs.sql"},
-      {"type":"file","name":"view_fills.sql"},
-      {"type":"file","name":"view_rewards_paid.sql"},
-      {"type":"file","name":"view_staking_parameters.sql"},
-      {"type":"file","name":"view_staking_pools.sql"},
-      {"type":"file","name":"view_zrx_staking_changes.sql"}
-    ]}
-  ]},
-  {"type":"report","directories":121,"files":426}
+module.exports = [
+  {
+    type: 'directory',
+    name: 'dune/',
+    contents: [
+      {
+        type: 'directory',
+        name: '1inch',
+        contents: [{ type: 'file', name: 'GasCompensation_daily.sql' }],
+      },
+      { type: 'file', name: 'README.md' },
+      {
+        type: 'directory',
+        name: 'Wallets',
+        contents: [
+          { type: 'file', name: 'MEW_TotalFees_2.5pc.sql' },
+          { type: 'file', name: 'MEW_TotalVolume1inch.sql' },
+          { type: 'file', name: 'Zeirion_volume1inch.sql' },
+          { type: 'directory', name: 'index.sql', contents: [] },
+        ],
+      },
+      {
+        type: 'directory',
+        name: '__dex__',
+        contents: [{ type: 'file', name: 'MonthlyTradingVolumes.sql' }],
+      },
+      { type: 'directory', name: 'aave', contents: [{ type: 'file', name: 'view_atokens.sql' }] },
+      {
+        type: 'directory',
+        name: 'abstractions',
+        contents: [
+          { type: 'file', name: 'README.md' },
+          {
+            type: 'directory',
+            name: 'aave',
+            contents: [{ type: 'file', name: 'view_atokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'async_art_v2',
+            contents: [{ type: 'file', name: 'async_art_v2_token_mapping.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'balancer',
+            contents: [
+              { type: 'file', name: 'view_add_liquidity.sql' },
+              { type: 'file', name: 'view_balances.sql' },
+              { type: 'file', name: 'view_lbps.sql' },
+              { type: 'file', name: 'view_pools_liquidity.sql' },
+              { type: 'file', name: 'view_pools_tokens_weights.sql' },
+              { type: 'file', name: 'view_remove_liquidity.sql' },
+              { type: 'file', name: 'view_swaps.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'bancornetwork',
+            contents: [
+              { type: 'file', name: 'view_add_convertible_token.sql' },
+              { type: 'file', name: 'view_add_liquidity_pool.sql' },
+              { type: 'file', name: 'view_add_smart_token.sql' },
+              { type: 'file', name: 'view_convert.sql' },
+              { type: 'file', name: 'view_remove_convertible_token.sql' },
+              { type: 'file', name: 'view_remove_liquidity_pool.sql' },
+              { type: 'file', name: 'view_remove_smart_token.sql' },
+              { type: 'file', name: 'view_smart_tokens.sql' },
+              { type: 'file', name: 'view_update_conversion_fee.sql' },
+              { type: 'file', name: 'view_update_price_data.sql' },
+              { type: 'file', name: 'view_update_token_rate.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'chainlink',
+            contents: [{ type: 'file', name: 'view_aggregator_mappings.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'compound',
+            contents: [
+              { type: 'file', name: 'view_accrue_interest.sql' },
+              { type: 'file', name: 'view_borrow.sql' },
+              { type: 'file', name: 'view_ctokens.sql' },
+              { type: 'file', name: 'view_liquidate_borrow.sql' },
+              { type: 'file', name: 'view_mint.sql' },
+              { type: 'file', name: 'view_redeem.sql' },
+              { type: 'file', name: 'view_repay_borrow.sql' },
+              { type: 'file', name: 'view_transfer_ctoken.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'curvefi',
+            contents: [{ type: 'file', name: 'view_trades.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'dex',
+            contents: [
+              {
+                type: 'directory',
+                name: 'trades',
+                contents: [
+                  { type: 'file', name: 'insert_1inch.sql' },
+                  { type: 'file', name: 'insert_balancer.sql' },
+                  { type: 'file', name: 'insert_bancor.sql' },
+                  { type: 'file', name: 'insert_curve.sql' },
+                  { type: 'file', name: 'insert_ddex.sql' },
+                  { type: 'file', name: 'insert_dydx.sql' },
+                  { type: 'file', name: 'insert_futureswap.sql' },
+                  { type: 'file', name: 'insert_gnosis_protocol.sql' },
+                  { type: 'file', name: 'insert_idex.sql' },
+                  { type: 'file', name: 'insert_kyber.sql' },
+                  { type: 'file', name: 'insert_linkswap.sql' },
+                  { type: 'file', name: 'insert_loopring.sql' },
+                  { type: 'file', name: 'insert_mooniswap.sql' },
+                  { type: 'file', name: 'insert_oasis.sql' },
+                  { type: 'file', name: 'insert_sushi.sql' },
+                  { type: 'file', name: 'insert_synthetix.sql' },
+                  { type: 'file', name: 'insert_uniswap.sql' },
+                  { type: 'file', name: 'insert_zeroex.sql' },
+                  { type: 'file', name: 'trades.sql' },
+                ],
+              },
+              { type: 'file', name: 'view_token_prices.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'erasure_bay',
+            contents: [
+              { type: 'file', name: 'view_burn.sql' },
+              { type: 'file', name: 'view_deposit_reward.sql' },
+              { type: 'file', name: 'view_deposit_stake.sql' },
+              { type: 'file', name: 'view_finalize.sql' },
+              { type: 'file', name: 'view_request_data.sql' },
+              { type: 'file', name: 'view_submit_data.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'erasure_numerai',
+            contents: [
+              { type: 'file', name: 'view_burn.sql' },
+              { type: 'file', name: 'view_reward.sql' },
+              { type: 'file', name: 'view_stake.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'erasure_quant',
+            contents: [
+              { type: 'file', name: 'view_burn.sql' },
+              { type: 'file', name: 'view_reward.sql' },
+              { type: 'file', name: 'view_stake.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'erc20',
+            contents: [
+              { type: 'file', name: 'stablecoins.sql' },
+              { type: 'file', name: 'tokens.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'ethereumnameservice',
+            contents: [
+              { type: 'file', name: 'old_preimages.sql' },
+              { type: 'file', name: 'view_expirations.sql' },
+              { type: 'file', name: 'view_registrations.sql' },
+              { type: 'file', name: 'view_registries.sql' },
+              { type: 'file', name: 'view_renewals.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'gnosis_protocol',
+            contents: [
+              { type: 'file', name: 'known_address.sql' },
+              { type: 'file', name: 'view_balances.sql' },
+              { type: 'file', name: 'view_daily_average_prices.sql' },
+              { type: 'file', name: 'view_movement.sql' },
+              { type: 'file', name: 'view_price_batch.sql' },
+              { type: 'file', name: 'view_tokens.sql' },
+              { type: 'file', name: 'view_trade_stats.sql' },
+              { type: 'file', name: 'view_trades.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'gnosis_safe',
+            contents: [{ type: 'file', name: 'view_safes.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'iearn_v1',
+            contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'iearn_v2',
+            contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'index',
+            contents: [
+              { type: 'file', name: 'view_indices.sql' },
+              { type: 'file', name: 'view_indices_assets.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'lending',
+            contents: [
+              { type: 'file', name: 'borrow.sql' },
+              { type: 'file', name: 'collateral_change.sql' },
+              { type: 'file', name: 'repay.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'loopring',
+            contents: [
+              { type: 'file', name: 'fn_decode_float_16.sql' },
+              { type: 'file', name: 'fn_decode_float_24.sql' },
+              { type: 'file', name: 'fn_process_block_v2.sql' },
+              { type: 'file', name: 'fn_process_trade_block_v1.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'makermcd',
+            contents: [{ type: 'file', name: 'collateral_addresses.sql' }],
+          },
+          { type: 'directory', name: 'oneinch', contents: [{ type: 'file', name: 'swaps.sql' }] },
+          { type: 'directory', name: 'oneproto', contents: [{ type: 'file', name: 'swaps.sql' }] },
+          { type: 'directory', name: 'onesplit', contents: [{ type: 'file', name: 'swaps.sql' }] },
+          {
+            type: 'directory',
+            name: 'public',
+            contents: [
+              { type: 'file', name: 'bytea2numeric.sql' },
+              { type: 'file', name: 'numeric2bytea.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'stablecoin',
+            contents: [
+              { type: 'file', name: 'burn.sql' },
+              { type: 'file', name: 'mint.sql' },
+              { type: 'file', name: 'transfer.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'synthetix',
+            contents: [
+              { type: 'file', name: 'rates.sql' },
+              { type: 'file', name: 'symbols.sql' },
+              { type: 'file', name: 'synths.sql' },
+              { type: 'file', name: 'trades.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'token_balances',
+            contents: [{ type: 'file', name: 'project_addresses.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'uniswap_merkle',
+            contents: [{ type: 'file', name: 'mrkl.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'uniswap_v1',
+            contents: [
+              { type: 'file', name: 'view_add_liquidity.sql' },
+              { type: 'file', name: 'view_eth_purchase.sql' },
+              { type: 'file', name: 'view_new_exchange.sql' },
+              { type: 'file', name: 'view_remove_liquidity.sql' },
+              { type: 'file', name: 'view_token_purchase.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'unit_protocol',
+            contents: [{ type: 'file', name: 'view_tokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'yamfinance',
+            contents: [{ type: 'file', name: 'pools.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'yearn',
+            contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'zeroex',
+            contents: [
+              { type: 'file', name: 'view_0x_api_fills.sql' },
+              { type: 'file', name: 'view_affiliate_data.sql' },
+              { type: 'file', name: 'view_current_epoch.sql' },
+              { type: 'file', name: 'view_epochs.sql' },
+              { type: 'file', name: 'view_fills.sql' },
+              { type: 'file', name: 'view_rewards_paid.sql' },
+              { type: 'file', name: 'view_staking_parameters.sql' },
+              { type: 'file', name: 'view_staking_pools.sql' },
+              { type: 'file', name: 'view_zrx_staking_changes.sql' },
+            ],
+          },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'async_art_v2',
+        contents: [{ type: 'file', name: 'async_art_v2_token_mapping.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'balancer',
+        contents: [
+          { type: 'file', name: 'view_add_liquidity.sql' },
+          { type: 'file', name: 'view_balances.sql' },
+          { type: 'file', name: 'view_lbps.sql' },
+          { type: 'file', name: 'view_pools_liquidity.sql' },
+          { type: 'file', name: 'view_pools_tokens_weights.sql' },
+          { type: 'file', name: 'view_remove_liquidity.sql' },
+          { type: 'file', name: 'view_swaps.sql' },
+          { type: 'file', name: 'view_trades.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'bancornetwork',
+        contents: [
+          { type: 'file', name: 'view_add_convertible_token.sql' },
+          { type: 'file', name: 'view_add_liquidity_pool.sql' },
+          { type: 'file', name: 'view_add_smart_token.sql' },
+          { type: 'file', name: 'view_convert.sql' },
+          { type: 'file', name: 'view_remove_convertible_token.sql' },
+          { type: 'file', name: 'view_remove_liquidity_pool.sql' },
+          { type: 'file', name: 'view_remove_smart_token.sql' },
+          { type: 'file', name: 'view_smart_tokens.sql' },
+          { type: 'file', name: 'view_update_conversion_fee.sql' },
+          { type: 'file', name: 'view_update_price_data.sql' },
+          { type: 'file', name: 'view_update_token_rate.sql' },
+        ],
+      },
+      { type: 'directory', name: 'base', contents: [{ type: 'file', name: '_price.sql' }] },
+      {
+        type: 'directory',
+        name: 'chainlink',
+        contents: [{ type: 'file', name: 'view_aggregator_mappings.sql' }],
+      },
+      { type: 'directory', name: 'clipper', contents: [{ type: 'file', name: 'view_trades.sql' }] },
+      {
+        type: 'directory',
+        name: 'coinbase_exchange',
+        contents: [{ type: 'file', name: 'CoinbaseWallet_1inchReffererFees.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'compound',
+        contents: [{ type: 'file', name: 'view_ctokens.sql' }],
+      },
+      { type: 'directory', name: 'curvefi', contents: [{ type: 'file', name: 'view_trades.sql' }] },
+      {
+        type: 'directory',
+        name: 'defi',
+        contents: [
+          { type: 'file', name: 'AUM_for_DPI.sql' },
+          { type: 'file', name: 'AverageGweiPricePerHour.sql' },
+          { type: 'file', name: 'Curve_SUSD_YUSD.sql' },
+          { type: 'file', name: 'DAI_PriceFluc.sql' },
+          { type: 'file', name: 'GasCosts_for_typical_Actions_RecentGweiPricing.sql' },
+          { type: 'file', name: 'Idle_AUM.sql' },
+          { type: 'file', name: 'MakerDAO_LiquidationsPerHour.sql' },
+          { type: 'file', name: 'StrategyGenericLevCompFarm_evt_Harvested.sql' },
+          { type: 'file', name: 'StrategyHegicETH_evt_Harvested.sql' },
+          { type: 'file', name: 'TotalNumberOfTransactions_SmartWalletsOnly.sql' },
+          { type: 'file', name: 'TotalStableTokens_StoreInSmartWallets.sql' },
+          { type: 'file', name: 'YETH_FunctionCounts_Daily.sql' },
+          { type: 'file', name: 'YFI_DailyRewards_Claimed.sql' },
+          { type: 'file', name: 'yVault_yCrv_Cumlative.sql' },
+          { type: 'file', name: 'yVault_yUSDT_Cumaltive.sql' },
+          { type: 'file', name: 'yVault_yUSD_Cumaltive.sql' },
+          { type: 'file', name: 'yVault_yaLINK_Cumulative.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'dex',
+        contents: [
+          {
+            type: 'directory',
+            name: 'trades',
+            contents: [
+              { type: 'file', name: 'insert_1inch.sql' },
+              { type: 'file', name: 'insert_1inch_lp.sql' },
+              { type: 'file', name: 'insert_airswap.sql' },
+              { type: 'file', name: 'insert_balancer.sql' },
+              { type: 'file', name: 'insert_bancor.sql' },
+              { type: 'file', name: 'insert_clipper.sql' },
+              { type: 'file', name: 'insert_curve.sql' },
+              { type: 'file', name: 'insert_ddex.sql' },
+              { type: 'file', name: 'insert_dodo.sql' },
+              { type: 'file', name: 'insert_dydx.sql' },
+              { type: 'file', name: 'insert_futureswap.sql' },
+              { type: 'file', name: 'insert_gnosis_protocol.sql' },
+              { type: 'file', name: 'insert_idex.sql' },
+              { type: 'file', name: 'insert_kyber.sql' },
+              { type: 'file', name: 'insert_linkswap.sql' },
+              { type: 'file', name: 'insert_loopring.sql' },
+              { type: 'file', name: 'insert_mooniswap.sql' },
+              { type: 'file', name: 'insert_oasis.sql' },
+              { type: 'file', name: 'insert_paraswap.sql' },
+              { type: 'file', name: 'insert_sushi.sql' },
+              { type: 'file', name: 'insert_swapr.sql' },
+              { type: 'file', name: 'insert_synthetix.sql' },
+              { type: 'file', name: 'insert_tokenlon.sql' },
+              { type: 'file', name: 'insert_uniswap.sql' },
+              { type: 'file', name: 'insert_zeroex.sql' },
+              { type: 'file', name: 'trades.sql' },
+            ],
+          },
+          { type: 'file', name: 'view_token_prices.sql' },
+        ],
+      },
+      { type: 'directory', name: 'dodo', contents: [{ type: 'file', name: 'view_markets.sql' }] },
+      {
+        type: 'directory',
+        name: 'erasure_bay',
+        contents: [
+          { type: 'file', name: 'view_burn.sql' },
+          { type: 'file', name: 'view_deposit_reward.sql' },
+          { type: 'file', name: 'view_deposit_stake.sql' },
+          { type: 'file', name: 'view_finalize.sql' },
+          { type: 'file', name: 'view_request_data.sql' },
+          { type: 'file', name: 'view_submit_data.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'erasure_numerai',
+        contents: [
+          { type: 'file', name: 'view_burn.sql' },
+          { type: 'file', name: 'view_reward.sql' },
+          { type: 'file', name: 'view_stake.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'erasure_quant',
+        contents: [
+          { type: 'file', name: 'view_burn.sql' },
+          { type: 'file', name: 'view_reward.sql' },
+          { type: 'file', name: 'view_stake.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'erc20',
+        contents: [
+          { type: 'file', name: 'stablecoins.sql' },
+          { type: 'file', name: 'tokens.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'ethereumnameservice',
+        contents: [
+          { type: 'file', name: 'old_preimages.sql' },
+          { type: 'file', name: 'view_expirations.sql' },
+          { type: 'file', name: 'view_registrations.sql' },
+          { type: 'file', name: 'view_registries.sql' },
+          { type: 'file', name: 'view_renewals.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'flashbots',
+        contents: [
+          { type: 'file', name: 'DailyMinerPaymentsByPool.sql' },
+          { type: 'file', name: 'PaymentsByPool.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'foundation',
+        contents: [{ type: 'file', name: 'usernames.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'gas',
+        contents: [
+          { type: 'file', name: '25PercentMedianGasPrice_hourly.sql' },
+          { type: 'file', name: 'BackRunningBots_DailyGasUsage.sql' },
+          { type: 'file', name: 'BlocksFilledAvgPerHr.sql' },
+          { type: 'file', name: 'CumulativeGasPrices_5mins.sql' },
+          { type: 'file', name: 'GasCostEstimate_TypicalTransaction.sql' },
+          { type: 'file', name: 'GasPriceRanges_hourly.sql' },
+          { type: 'file', name: 'MEV_ZeroCostTx.sql' },
+          { type: 'file', name: 'MedianGasPrice_24hrs.sql' },
+          { type: 'file', name: 'MedianGasPrice_weekly.sql' },
+          { type: 'file', name: 'Proportion_of_AvgUsed.sql' },
+          { type: 'file', name: 'TotalDeposits_Coinbase.sql' },
+          { type: 'file', name: 'TransactionsPercentTotal_argent.sql' },
+          { type: 'file', name: 'YVaultDailyCostUSD_Yearn.sql' },
+          { type: 'file', name: 'YVaultHourlyCostUSD_Yearn.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'generic',
+        contents: [
+          { type: 'file', name: 'avg-gas-price-per-hour.sql' },
+          { type: 'file', name: 'avg.sql' },
+          { type: 'file', name: 'contract-delpoyments-per-month.sql' },
+          { type: 'file', name: 'ethereum-gas-usd-per-day.sql' },
+          { type: 'file', name: 'gas-costs-for-typical-actions.sql' },
+          { type: 'file', name: 'gas-token-mint-gas-price.sql' },
+          { type: 'file', name: 'list-of-USDT-Banned-Addresses.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'gnosis_protocol',
+        contents: [
+          { type: 'file', name: 'known_address.sql' },
+          { type: 'file', name: 'view_balances.sql' },
+          { type: 'file', name: 'view_daily_average_prices.sql' },
+          { type: 'file', name: 'view_movement.sql' },
+          { type: 'file', name: 'view_price_batch.sql' },
+          { type: 'file', name: 'view_tokens.sql' },
+          { type: 'file', name: 'view_trade_stats.sql' },
+          { type: 'file', name: 'view_trades.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'gnosis_safe',
+        contents: [{ type: 'file', name: 'view_safes.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'homestead',
+        contents: [
+          { type: 'file', name: 'RoutedUniswapSwaps.sql' },
+          { type: 'file', name: 'block_rewards_daily_by_miner.sql' },
+          { type: 'file', name: 'block_rewards_gini.sql' },
+          { type: 'file', name: 'gini.sql' },
+          { type: 'file', name: 'gini_daily.sql' },
+          { type: 'file', name: 'gini_sma.sql' },
+          { type: 'file', name: 'hashrate.sql' },
+          { type: 'file', name: 'hashrate_by_day.sql' },
+          { type: 'file', name: 'hashrate_by_hour.sql' },
+          { type: 'file', name: 'hashrate_daily_average.sql' },
+          { type: 'file', name: 'hashrate_sma.sql' },
+          { type: 'file', name: 'miners_by_reward_monthly.sql' },
+          { type: 'file', name: 'onchain_transactions_all.sql' },
+          { type: 'file', name: 'rich_list.sql' },
+          { type: 'file', name: 'top_miners.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'iearn_v1',
+        contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'iearn_v2',
+        contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'index',
+        contents: [
+          { type: 'file', name: 'view_indices.sql' },
+          { type: 'file', name: 'view_indices_assets.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'larvalabs',
+        contents: [{ type: 'file', name: 'crypto_punks_attributes.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'lending',
+        contents: [
+          { type: 'file', name: 'borrow.sql' },
+          { type: 'file', name: 'collateral_change.sql' },
+          { type: 'file', name: 'repay.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'loopring',
+        contents: [
+          { type: 'file', name: 'fn_decode_float_16.sql' },
+          { type: 'file', name: 'fn_decode_float_24.sql' },
+          { type: 'file', name: 'fn_process_block_v2.sql' },
+          { type: 'file', name: 'fn_process_trade_block_v1.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'makerdao',
+        contents: [
+          { type: 'file', name: 'Interest_Collateral_Revnue.sql' },
+          { type: 'file', name: 'Interest_Monthly_Rev.sql' },
+          { type: 'file', name: 'PSM_Monthly.sql' },
+          { type: 'file', name: 'PnL.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'makermcd',
+        contents: [{ type: 'file', name: 'collateral_addresses.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'nft',
+        contents: [
+          { type: 'file', name: 'tokens.sql' },
+          {
+            type: 'directory',
+            name: 'trades',
+            contents: [
+              { type: 'file', name: 'README.md' },
+              { type: 'file', name: 'insert_cryptopunks.sql' },
+              { type: 'file', name: 'insert_foundation.sql' },
+              { type: 'file', name: 'insert_opensea.sql' },
+              { type: 'file', name: 'insert_rarible.sql' },
+              { type: 'file', name: 'insert_superrare.sql' },
+              { type: 'file', name: 'trades.sql' },
+            ],
+          },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'nft_traits',
+        contents: [{ type: 'file', name: 'wicked_cranium_attributes.sql' }],
+      },
+      { type: 'directory', name: 'oneinch', contents: [{ type: 'file', name: 'swaps.sql' }] },
+      { type: 'directory', name: 'oneproto', contents: [{ type: 'file', name: 'swaps.sql' }] },
+      { type: 'directory', name: 'onesplit', contents: [{ type: 'file', name: 'swaps.sql' }] },
+      {
+        type: 'directory',
+        name: 'public',
+        contents: [
+          { type: 'file', name: 'bytea2numeric.sql' },
+          { type: 'file', name: 'numeric2bytea.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'src',
+        contents: [
+          {
+            type: 'directory',
+            name: 'NFT',
+            contents: [
+              {
+                type: 'directory',
+                name: 'erc721',
+                contents: [{ type: 'file', name: 'top_tokens_by_transfer.sql' }],
+              },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'aave',
+            contents: [{ type: 'file', name: 'view_atokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'balancer',
+            contents: [
+              { type: 'file', name: 'view_add_liquidity.sql' },
+              { type: 'file', name: 'view_remove_liquidity.sql' },
+              { type: 'file', name: 'view_swaps.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'bancornetwork',
+            contents: [
+              { type: 'file', name: 'view_add_convertible_token.sql' },
+              { type: 'file', name: 'view_add_liquidity_pool.sql' },
+              { type: 'file', name: 'view_add_smart_token.sql' },
+              { type: 'file', name: 'view_convert.sql' },
+              { type: 'file', name: 'view_remove_convertible_token.sql' },
+              { type: 'file', name: 'view_remove_liquidity_pool.sql' },
+              { type: 'file', name: 'view_remove_smart_token.sql' },
+              { type: 'file', name: 'view_smart_tokens.sql' },
+              { type: 'file', name: 'view_update_conversion_fee.sql' },
+              { type: 'file', name: 'view_update_price_data.sql' },
+              { type: 'file', name: 'view_update_token_rate.sql' },
+            ],
+          },
+          { type: 'file', name: 'borrow.sql' },
+          { type: 'file', name: 'collateral.sql' },
+          {
+            type: 'directory',
+            name: 'compound',
+            contents: [
+              { type: 'file', name: 'view_accrue_interest.sql' },
+              { type: 'file', name: 'view_borrow.sql' },
+              { type: 'file', name: 'view_ctokens.sql' },
+              { type: 'file', name: 'view_liquidate_borrow.sql' },
+              { type: 'file', name: 'view_mint.sql' },
+              { type: 'file', name: 'view_redeem.sql' },
+              { type: 'file', name: 'view_repay_borrow.sql' },
+              { type: 'file', name: 'view_transfer_ctoken.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'curvefi',
+            contents: [
+              { type: 'file', name: 'all_Liqudity.sql' },
+              { type: 'file', name: 'dai_liquidity_daily.sql' },
+              { type: 'file', name: 'usdc_volume_daily.sql' },
+              { type: 'file', name: 'view_trades.sql' },
+              { type: 'file', name: 'wbtc_liquidity_daily.sql' },
+            ],
+          },
+          { type: 'directory', name: 'dex', contents: [{ type: 'file', name: 'trades.sql' }] },
+          {
+            type: 'directory',
+            name: 'erc20',
+            contents: [
+              { type: 'file', name: 'stablecoins.sql' },
+              { type: 'file', name: 'tokens.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'ethereumnameservice',
+            contents: [
+              { type: 'file', name: 'old_preimages.sql' },
+              { type: 'file', name: 'view_expirations.sql' },
+              { type: 'file', name: 'view_registrations.sql' },
+              { type: 'file', name: 'view_registries.sql' },
+              { type: 'file', name: 'view_renewals.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'gnosis_protocol',
+            contents: [
+              { type: 'file', name: 'known_address.sql' },
+              { type: 'file', name: 'view_balances.sql' },
+              { type: 'file', name: 'view_movement.sql' },
+              { type: 'file', name: 'view_price_batch.sql' },
+              { type: 'file', name: 'view_tokens.sql' },
+              { type: 'file', name: 'view_trade_stats.sql' },
+              { type: 'file', name: 'view_trades.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'gnosis_safe',
+            contents: [{ type: 'file', name: 'view_safes.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'iearn_v1',
+            contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'iearn_v2',
+            contents: [{ type: 'file', name: 'view_ytokens.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'lending',
+            contents: [
+              { type: 'file', name: 'borrow.sql' },
+              { type: 'file', name: 'collateral.sql' },
+              { type: 'file', name: 'repay.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'loopring',
+            contents: [
+              { type: 'file', name: 'fn_decode_float.sql' },
+              { type: 'file', name: 'fn_process_trade_block.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'makermcd',
+            contents: [{ type: 'file', name: 'collateral_addresses.sql' }],
+          },
+          { type: 'directory', name: 'mev', contents: [{ type: 'file', name: 'zero_gwei.sql' }] },
+          {
+            type: 'directory',
+            name: 'oneinch',
+            contents: [{ type: 'file', name: 'view_swaps.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'oneproto',
+            contents: [{ type: 'file', name: 'view_swaps.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'onesplit',
+            contents: [{ type: 'file', name: 'view_swaps.sql' }],
+          },
+          { type: 'file', name: 'repay.sql' },
+          {
+            type: 'directory',
+            name: 'stablecoin',
+            contents: [{ type: 'file', name: 'view_transfers.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'synthetix',
+            contents: [
+              { type: 'file', name: 'rates.sql' },
+              { type: 'file', name: 'symbols.sql' },
+              { type: 'file', name: 'synths.sql' },
+              { type: 'file', name: 'trades.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'token_balances',
+            contents: [{ type: 'file', name: 'project_addresses.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'uniswap',
+            contents: [
+              { type: 'file', name: 'view_add_liquidity.sql' },
+              { type: 'file', name: 'view_eth_purchase.sql' },
+              { type: 'file', name: 'view_new_exchange.sql' },
+              { type: 'file', name: 'view_remove_liquidity.sql' },
+              { type: 'file', name: 'view_token_purchase.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'uniswap_merkle',
+            contents: [{ type: 'file', name: 'mrkl.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'yamfinance',
+            contents: [{ type: 'file', name: 'pools.sql' }],
+          },
+          {
+            type: 'directory',
+            name: 'yearn',
+            contents: [
+              { type: 'file', name: 'view_ytokens.sql' },
+              { type: 'file', name: 'ycrv_deposit.sql' },
+              { type: 'file', name: 'yvault_ycrv_cul.sql' },
+            ],
+          },
+          {
+            type: 'directory',
+            name: 'zeroex',
+            contents: [
+              { type: 'file', name: 'view_affiliate_data.sql' },
+              { type: 'file', name: 'view_current_epoch.sql' },
+              { type: 'file', name: 'view_epochs.sql' },
+              { type: 'file', name: 'view_fills.sql' },
+              { type: 'file', name: 'view_rewards_paid.sql' },
+              { type: 'file', name: 'view_staking_parameters.sql' },
+              { type: 'file', name: 'view_staking_pools.sql' },
+              { type: 'file', name: 'view_zrx_staking_changes.sql' },
+            ],
+          },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'stablecoin',
+        contents: [
+          { type: 'file', name: 'burn.sql' },
+          { type: 'file', name: 'mint.sql' },
+          { type: 'file', name: 'transfer.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'sushiswap',
+        contents: [
+          { type: 'file', name: '7d_protocol_fees.sql' },
+          { type: 'file', name: 'GMV_sushiswap.sql' },
+          { type: 'file', name: 'LP_timeline_growth.sql' },
+          { type: 'file', name: 'LP_timeline_ratio.sql' },
+          { type: 'file', name: 'compare_sushi_uniswap_pools.sql' },
+          { type: 'file', name: 'culmulative_volume_sushiswap.sql' },
+          { type: 'file', name: 'daily_Unique_Sushi_transactions.sql' },
+          { type: 'file', name: 'daily_unique_claims.sql' },
+          { type: 'file', name: 'deposits_sushipool_counts.sql' },
+          { type: 'file', name: 'top500_Sushi_hodlers.sql' },
+          { type: 'file', name: 'top_masterChef_LPs.sql' },
+          { type: 'file', name: 'unique_7d_traders.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'synthetix',
+        contents: [
+          { type: 'file', name: 'rates.sql' },
+          { type: 'file', name: 'symbols.sql' },
+          { type: 'file', name: 'synths.sql' },
+          { type: 'file', name: 'trades.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'token_balances',
+        contents: [{ type: 'file', name: 'project_addresses.sql' }],
+      },
+      { type: 'directory', name: 'uniswap', contents: [{ type: 'file', name: 'V2Router.sql' }] },
+      { type: 'directory', name: 'uniswap_merkle', contents: [{ type: 'file', name: 'mrkl.sql' }] },
+      {
+        type: 'directory',
+        name: 'uniswap_v1',
+        contents: [
+          { type: 'file', name: 'view_add_liquidity.sql' },
+          { type: 'file', name: 'view_eth_purchase.sql' },
+          { type: 'file', name: 'view_new_exchange.sql' },
+          { type: 'file', name: 'view_remove_liquidity.sql' },
+          { type: 'file', name: 'view_token_purchase.sql' },
+        ],
+      },
+      {
+        type: 'directory',
+        name: 'unit_protocol',
+        contents: [{ type: 'file', name: 'view_tokens.sql' }],
+      },
+      {
+        type: 'directory',
+        name: 'xdai',
+        contents: [
+          { type: 'file', name: 'README.md' },
+          { type: 'directory', name: 'dex', contents: [{ type: 'file', name: 'trades.sql' }] },
+          {
+            type: 'directory',
+            name: 'gnosis_protocol',
+            contents: [
+              { type: 'file', name: 'view_balances.sql' },
+              { type: 'file', name: 'view_daily_average_prices.sql' },
+              { type: 'file', name: 'view_movement.sql' },
+              { type: 'file', name: 'view_price_batch.sql' },
+              { type: 'file', name: 'view_tokens.sql' },
+              { type: 'file', name: 'view_trade_stats.sql' },
+              { type: 'file', name: 'view_trades.sql' },
+            ],
+          },
+          { type: 'directory', name: 'perp', contents: [{ type: 'file', name: 'view_amm.sql' }] },
+          {
+            type: 'directory',
+            name: 'public',
+            contents: [
+              { type: 'file', name: 'bytea2numeric.sql' },
+              { type: 'file', name: 'numeric2bytea.sql' },
+            ],
+          },
+        ],
+      },
+      { type: 'directory', name: 'yamfinance', contents: [{ type: 'file', name: 'pools.sql' }] },
+      { type: 'directory', name: 'yearn', contents: [{ type: 'file', name: 'view_ytokens.sql' }] },
+      {
+        type: 'directory',
+        name: 'zeroex',
+        contents: [
+          { type: 'file', name: 'view_0x_api_fills.sql' },
+          { type: 'file', name: 'view_affiliate_data.sql' },
+          { type: 'file', name: 'view_current_epoch.sql' },
+          { type: 'file', name: 'view_epochs.sql' },
+          { type: 'file', name: 'view_fills.sql' },
+          { type: 'file', name: 'view_rewards_paid.sql' },
+          { type: 'file', name: 'view_staking_parameters.sql' },
+          { type: 'file', name: 'view_staking_pools.sql' },
+          { type: 'file', name: 'view_zrx_staking_changes.sql' },
+        ],
+      },
+    ],
+  },
+  { type: 'report', directories: 127, files: 433 },
 ];
-exports dune-snippets
+// @exports default
