@@ -2,6 +2,19 @@
 
 ## Dune Snippets
 
+>**Warning**     
+> Abstractions are now 'deprecated', We encourage users to start making the transition to v2 abstractions aka spellbook.
+> [see https://github.com/duneanalytics/spellbook/pull/1424](https://github.com/duneanalytics/spellbook/pull/1424)
+
+> pr/1424
+> Move Dune's v1 abstractions into the archive folder deprecated-dune-v1-abstractions.
+> Intermediate datasets created by v1 abstractions are still accessible on dune.com. We encourage users to start making the transition to v2 abstractions aka spellbook.
+
+> Rename repo from abstractions to spellbook
+
+
+---
+
 <br />
 
 ![Autoformat SQL](https://github.com/sambacha/dune-snippets/workflows/Autoformat%20SQL/badge.svg)
