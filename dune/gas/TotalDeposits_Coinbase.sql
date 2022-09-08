@@ -8,13 +8,17 @@ FROM
   (
     SELECT
       "from" AS address,
-      - tr.value AS amount,
+      -tr.value AS amount,
       date_trunc('day', block_time) AS time
     FROM
       ethereum.traces AS tr
     WHERE
-      "from" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24' AND success AND (call_type NOT IN ('delegatecall',
-        'callcode', 'staticcall') OR call_type IS null) AND block_time > '2021-01-04' AND block_time < '2021-02-07'
+      "from" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24'
+      AND success
+      AND (call_type NOT IN ('delegatecall', 'callcode', 'staticcall')
+      OR call_type IS null)
+      AND block_time > '2021-01-04'
+      AND block_time < '2021-02-07'
     UNION ALL -- inbound transfers
     SELECT
       "to" AS address,
@@ -23,16 +27,21 @@ FROM
     FROM
       ethereum.traces
     WHERE
-      "to" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24' AND success AND (call_type NOT IN ('delegatecall',
-        'callcode', 'staticcall') OR call_type IS null) AND block_time > '2021-01-04' AND block_time < '2021-02-07'
+      "to" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24'
+      AND success
+      AND (call_type NOT IN ('delegatecall', 'callcode', 'staticcall')
+      OR call_type IS null)
+      AND block_time > '2021-01-04'
+      AND block_time < '2021-02-07'
     UNION ALL -- gas costs
     SELECT
       "from" AS address,
-      - gas_used * gas_price AS amount,
+      -gas_used * gas_price AS amount,
       date_trunc('day', block_time) AS time
     FROM
       ethereum.transactions
     WHERE
-      "from" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24' AND block_time > '2021-01-04' AND block_time <
-      '2021-02-07'
+      "from" = '\x713E11c146911B2cBa7df18b89BFfaa64F2c9D24'
+      AND block_time > '2021-01-04'
+      AND block_time < '2021-02-07'
   ) AS t;

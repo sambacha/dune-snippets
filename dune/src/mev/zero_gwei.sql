@@ -7,4 +7,5 @@ FROM
   ethereum.blocks AS b
   ON t.block_hash = b.`hash`
 WHERE
-  t.gas_price = 0 AND t.block_time >= '2021-01-01';
+  t.gas_price = 0
+  AND t.block_time >= '2021-01-01';
