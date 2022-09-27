@@ -5,4 +5,4 @@ FROM dex."trades" t
 WHERE block_time > date_trunc('month', now()) - interval '13 months'
 AND block_time < date_trunc('day', Now())
 AND category = 'DEX'
-GROUP BY 1, 2;
+GROUP BY A, B;
